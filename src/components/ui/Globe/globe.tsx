@@ -1,20 +1,20 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from "three";
-import ThreeGlobe from "three-globe";
+// import ThreeGlobe from "three-globe";
 import { useThree, Canvas, extend } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import countries from "@/data/globe.json";
 import * as THREE from "three";
-declare module "@react-three/fiber" {
-  interface ThreeElements {
-    threeGlobe: ThreeElements["mesh"] & {
-      new (): ThreeGlobe;
-    };
-  }
-}
+// declare module "@react-three/fiber" {
+//   interface ThreeElements {
+//     threeGlobe: ThreeElements["mesh"] & {
+//       new (): ThreeGlobe;
+//     };
+//   }
+// }
 
-extend({ ThreeGlobe: ThreeGlobe });
+// extend({ ThreeGlobe: ThreeGlobe });
 
 const RING_PROPAGATION_SPEED = 3;
 const aspect = 1.2;
@@ -28,7 +28,7 @@ interface WorldProps {
 let numbersOfRings = [0];
 
 export function Globe({ globeConfig, data }: WorldProps) {
-  const globeRef = useRef<ThreeGlobe | null>(null);
+  const globeRef = useRef<any>(null);
   const groupRef = useRef<THREE.Group | null>(null);
   const [isInitialized, setIsInitialized] = useState(false);
 
@@ -50,12 +50,28 @@ export function Globe({ globeConfig, data }: WorldProps) {
   };
 
   // Initialize globe only once
+  // useEffect(() => {
+  //   if (!globeRef.current && groupRef.current) {
+  //     globeRef.current = new ThreeGlobe();
+  //     (groupRef.current as any).add(globeRef.current);
+  //     setIsInitialized(true);
+  //   }
+  // }, []);
+
   useEffect(() => {
-    if (!globeRef.current && groupRef.current) {
+    let mounted = true;
+
+    import("three-globe").then(({ default: ThreeGlobe }) => {
+      if (!mounted || !groupRef.current) return;
+
       globeRef.current = new ThreeGlobe();
-      (groupRef.current as any).add(globeRef.current);
+      groupRef.current.add(globeRef.current);
       setIsInitialized(true);
-    }
+    });
+
+    return () => {
+      mounted = false;
+    };
   }, []);
 
   // Build material when globe is initialized or when relevant props change
@@ -203,6 +219,8 @@ export function WebGLRendererConfig() {
   const { gl, size } = useThree();
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+    
     gl.setPixelRatio(window.devicePixelRatio);
     gl.setSize(size.width, size.height);
     gl.setClearColor(0xffaaff, 0);
