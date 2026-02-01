@@ -3,6 +3,7 @@ export * from './3dPin';
 export * from './Spotlight';
 export * from './BentoGrid';
 export * from './MagicButton';
+export * from './MovingBorder';
 export * from './FloatingNavbar';
 export * from './TextGenerateEffect';
 export * from './InfiniteMovingCards';

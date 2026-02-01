@@ -5,6 +5,7 @@ import { navItems } from "@/data";
 import { FloatingNav } from "../ui";
 import { RecentProjects } from "./recent_projects";
 import { Testimonial } from "./testimonial";
+import { Experiences } from "./experiences";
 
 export const Home = () => {
   return (
@@ -15,6 +16,7 @@ export const Home = () => {
         <Grid />
         <RecentProjects />
         <Testimonial />
+        <Experiences />
       </div>
     </main>
   );

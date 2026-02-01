@@ -120,3 +120,22 @@ type InfiniteMovingCardsProps = {
   pauseOnHover?: boolean;
   className?: string;
 };
+
+type MovingBorderProps = {
+  children: React.ReactNode;
+  duration?: number;
+  rx?: string;
+  ry?: string;
+  [key: string]: any;
+};
+
+type ButtonProps = {
+  borderRadius?: string;
+  children: React.ReactNode;
+  as?: any;
+  containerClassName?: string;
+  borderClassName?: string;
+  duration?: number;
+  className?: string;
+  [key: string]: any;
+};
