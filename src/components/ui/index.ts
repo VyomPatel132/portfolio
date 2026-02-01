@@ -5,4 +5,5 @@ export * from './BentoGrid';
 export * from './MagicButton';
 export * from './FloatingNavbar';
 export * from './TextGenerateEffect';
+export * from './InfiniteMovingCards';
 export * from './BackgroundGradientAnimation';

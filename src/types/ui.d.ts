@@ -107,4 +107,16 @@ type PinContainerProps = {
   href?: string;
   className?: string;
   containerClassName?: string;
-}
+};
+
+type InfiniteMovingCardsProps = {
+  items: {
+    quote: string;
+    name: string;
+    title: string;
+  }[];
+  direction?: "left" | "right";
+  speed?: "fast" | "normal" | "slow";
+  pauseOnHover?: boolean;
+  className?: string;
+};

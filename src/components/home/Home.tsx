@@ -4,6 +4,7 @@ import { Grid } from "../custom";
 import { navItems } from "@/data";
 import { FloatingNav } from "../ui";
 import { RecentProjects } from "./recent_projects";
+import { Testimonial } from "./testimonial";
 
 export const Home = () => {
   return (
@@ -13,6 +14,7 @@ export const Home = () => {
         <Hero />
         <Grid />
         <RecentProjects />
+        <Testimonial />
       </div>
     </main>
   );
