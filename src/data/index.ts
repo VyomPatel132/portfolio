@@ -5,6 +5,13 @@ export const navItems = [
   { name: "Contact", link: "#contact" },
 ];
 
+export const roleItems = [
+  "React.js developer",
+  "Next.js developer",
+  "Front End developer",
+  "React Specialt",
+];
+
 export const gridItems = [
   {
     id: 1,

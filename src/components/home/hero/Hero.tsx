@@ -1,8 +1,14 @@
 import React from "react";
 import { cn } from "@/utils/cn";
-import { MagicButton, Spotlight, TextGenerateEffect } from "@/components/ui";
+import {
+  ContainerTextFlip,
+  MagicButton,
+  Spotlight,
+  TextGenerateEffect,
+} from "@/components/ui";
 import Link from "next/link";
 import { FaLocationArrow } from "react-icons/fa6";
+import { roleItems } from "@/data";
 
 export const Hero = () => {
   return (
@@ -44,16 +50,23 @@ export const Hero = () => {
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi, I&apos;m Vyom Patel, a Next.js Developer based in India
+            Hi, I&apos;m Vyom Patel, a
+            <ContainerTextFlip words={roleItems} />
+            based in India
           </p>
 
-          <Link href="#about">
-            <MagicButton
-              title="Show my work"
-              icon={<FaLocationArrow />}
-              position="right"
-            />
-          </Link>
+          <div className="flex gap-6">
+            <Link href="#about">
+              <MagicButton
+                title="Show my work"
+                icon={<FaLocationArrow />}
+                position="right"
+              />
+            </Link>
+            <Link href="mailto:vyomp59@gmail.com">
+              <MagicButton title="Get in touch" />
+            </Link>
+          </div>
         </div>
       </div>
     </div>
