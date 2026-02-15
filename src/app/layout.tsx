@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/styles/globals.css";
-import { ThemeProvider } from "@/components";
+import { FloatingNav, ThemeProvider } from "@/components";
+import { navItems } from "@/data";
+import { Footer } from "@/components/common";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +36,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <FloatingNav navItems={navItems} />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
