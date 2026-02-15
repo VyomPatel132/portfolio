@@ -6,6 +6,7 @@ import { FloatingNav } from "../ui";
 import { RecentProjects } from "./recent_projects";
 import { Testimonial } from "./testimonial";
 import { Experiences } from "./experiences";
+import { Approach } from "./approach";
 
 export const Home = () => {
   return (
@@ -17,6 +18,7 @@ export const Home = () => {
         <RecentProjects />
         <Testimonial />
         <Experiences />
+        <Approach />
       </div>
     </main>
   );

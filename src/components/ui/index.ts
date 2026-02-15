@@ -8,3 +8,4 @@ export * from './FloatingNavbar';
 export * from './TextGenerateEffect';
 export * from './InfiniteMovingCards';
 export * from './BackgroundGradientAnimation';
+export * from './CanvasRevealEffect';
