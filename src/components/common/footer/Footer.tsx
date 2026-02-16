@@ -20,12 +20,11 @@ export const Footer = () => {
 
       <div className="flex flex-col items-center">
         <h1 className="heading lg:max-w-[45vw]">
-          Ready to take <span className="text-purple-300">your</span> digital
-          presence to the next level?
+          Ready to elevate <span className="text-purple-300">your</span> digital presence?
         </h1>
         <p className="text-[#c1c2d3] md:mt-10 my-5 text-center">
-          Reach out to me today and let&apos;s discuss how I can help you
-          achieve your goals.
+          I&apos;m available for freelance and collaboration opportunities. 
+          Let&apos;s discuss how I can help bring your ideas to life.
         </p>
         <Link href="mailto:vyomp59@gmail.com">
           <MagicButton
@@ -36,12 +35,12 @@ export const Footer = () => {
         </Link>
       </div>
 
-      <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
+      <div className="flex mt-16 p-5 md:flex-row flex-col justify-between items-center">
         <p className="md:text-base text-sm md:font-normal font-light">
           Copyright © 2026 Vyom
         </p>
 
-        <div className="flex items-center md:gap-3 gap-6">
+        <div className="flex items-center md:gap-3 gap-6 mt-6">
           {socialMedia.map((profile) => (
             <div
               key={profile.id}

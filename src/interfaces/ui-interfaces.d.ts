@@ -35,3 +35,12 @@ interface ContainerTextFlipProps {
   /** Duration of the transition animation in milliseconds */
   animationDuration?: number;
 }
+
+interface MagicButtonProps {
+  title: string;
+  icon?: React.ReactNode;
+  position?: string;
+  handleClick?: () => void;
+  otherClasses?: string;
+  variant?: Variant;
+};

@@ -10,12 +10,15 @@ type TextGenerateEffectProps = {
   duration?: number;
 };
 
+type Variant = "gradient" | "primary" | "outline";
+
 type MagicButtonProps = {
   title: string;
   icon?: React.ReactNode;
   position?: string;
   handleClick?: () => void;
   otherClasses?: string;
+  variant?: Variant;
 };
 
 type FloatingNavProps = {

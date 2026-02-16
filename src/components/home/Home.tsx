@@ -13,7 +13,7 @@ export const Home = () => {
         <Hero />
         <Grid />
         <RecentProjects />
-        <Testimonial />
+        {/* <Testimonial /> */}
         <Experiences />
         <Approach />
       </div>

@@ -10,9 +10,9 @@ export const Approach = () => {
       </h1>
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center gap-4">
         <Card
-          title="Planning & Strategy"
+          title="Discovery & Strategy"
           icon={<AceternityIcon order="phase 1" />}
-          description="We'll collaborate to map out your website's goals, target audience, and key functionalities. We'll discuss things like site structure, navigation, and content requirements."
+          description="We start by understanding your business goals, target audience, and product vision. I define the technical approach, architecture, and roadmap to ensure clarity before development begins."
         >
           <CanvasRevealEffect
             animationSpeed={5.1}
@@ -20,9 +20,9 @@ export const Approach = () => {
           />
         </Card>
         <Card
-          title="Development & Progress Update"
+          title="Design & Development"
           icon={<AceternityIcon order="phase 2" />}
-          description="Once we agree on the plane, I cue my lofi playlist and dive into coding. From initial sketches to polished code, I keep you updated every step of the way."
+          description="I translate strategy into scalable, maintainable code. From building reusable components to implementing responsive and accessible UI, every detail is crafted for performance and usability."
         >
           <CanvasRevealEffect
             animationSpeed={3}
@@ -35,9 +35,9 @@ export const Approach = () => {
           />
         </Card>
         <Card
-          title="Development & Launch"
+          title="Testing, Optimization & Launch"
           icon={<AceternityIcon order="phase 3" />}
-          description="This is where the magic happens! Based on the approved design, I'll translate wverything into functional code, building your website from the ground up."
+          description="Before launch, I rigorously test across devices and browsers, optimize performance, and ensure production readiness. After deployment, I remain available for iterations and continuous improvement."
         >
           <CanvasRevealEffect
             animationSpeed={3}
