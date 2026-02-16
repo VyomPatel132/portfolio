@@ -215,13 +215,21 @@ export const socialMedia = [
   {
     id: 1,
     img: "/git.svg",
+    link: "https://github.com/VyomPatel132",
   },
   {
     id: 2,
-    img: "/twit.svg",
+    img: "/wha.svg",
+    link: "https://wa.me/916354046815",
   },
   {
     id: 3,
     img: "/link.svg",
+    link: "https://www.linkedin.com/in/vyom-patel-61117823a",
+  },
+  {
+    id: 4,
+    img: "/insta.svg",
+    link: "https://www.instagram.com/vpp145/",
   },
 ];
