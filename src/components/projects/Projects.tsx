@@ -1,5 +1,6 @@
 import { FilterTab } from "./filter_tab";
 import { Hero } from "./hero";
+import { ProjectsListing } from "./projects_listing";
 
 export const Projects = () => {
   return (
@@ -7,6 +8,7 @@ export const Projects = () => {
       <div className="max-w-7xl w-full">
         <Hero />
         <FilterTab />
+        <ProjectsListing />
       </div>
     </main>
   );

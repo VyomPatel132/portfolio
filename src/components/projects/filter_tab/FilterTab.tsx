@@ -7,7 +7,7 @@ import { IoChevronDown } from "react-icons/io5";
 
 export const FilterTab = () => {
   return (
-    <section className="relative z-20 w-full px-4 py-10 md:py-16">
+    <section className="relative z-20 w-full px-4 py-8 md:py-14">
       <div className="max-w-6xl mx-auto space-y-8">
         {/* Search Bar */}
         <div className="flex justify-center">
