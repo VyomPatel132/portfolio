@@ -1,8 +1,11 @@
+"use client";
+
 import { CardItem } from "@/components/common";
 import { CardBody, CardContainer, MagicButton } from "@/components/ui";
 import { projects } from "@/data";
 import { cn } from "@/utils/cn";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { FaLocationArrow } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
@@ -11,17 +14,20 @@ const colors = ["blue", "purple", "green", "orange", "pink", "cyan"];
 const randomColor = colors[Math.floor(Math.random() * colors.length)];
 
 export const ProjectsListing = () => {
+  const router = useRouter();
+
   return (
     <div className="py-2">
-      <div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-8 mt-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-      >
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-8 mt-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {projects.map((project) => (
           <div key={project.id} className="group">
             <CardContainer className="inter-var h-full">
               <CardBody className="bg-[#000319]/70 backdrop-blur-md relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] border border-white/[0.15] w-full h-full rounded-3xl p-5 sm:p-6 transition-all duration-300">
                 {/* Category + Featured badge */}
-                <CardItem translateZ="50" className="flex items-center justify-between mb-4">
+                <CardItem
+                  translateZ="50"
+                  className="flex items-center justify-between mb-4"
+                >
                   <span
                     className={cn(
                       "px-3 py-1 text-xs font-medium rounded-full",
@@ -93,12 +99,15 @@ export const ProjectsListing = () => {
                     ))}
                   </CardItem>
 
-                  <div className="flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors cursor-pointer">
+                  <button
+                    onClick={() => router.push(`/projects/${project.id}`)}
+                    className="flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors cursor-pointer"
+                  >
                     <p className="text-sm md:text-base font-medium">
                       Check Live Site
                     </p>
                     <FaLocationArrow className="text-sm" />
-                  </div>
+                  </button>
                 </div>
               </CardBody>
             </CardContainer>
