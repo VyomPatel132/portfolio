@@ -22,7 +22,7 @@ export const ProjectsListing = () => {
         {projects.map((project) => (
           <div key={project.id} className="group">
             <CardContainer className="inter-var h-full">
-              <CardBody className="bg-[#000319]/70 backdrop-blur-md relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] border border-white/[0.15] w-full h-full rounded-3xl p-5 sm:p-6 transition-all duration-300">
+              <CardBody className="bg-[#000319]/70 backdrop-blur-md relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/10 border border-white/15 w-full h-full rounded-3xl p-5 sm:p-6 transition-all duration-300">
                 {/* Category + Featured badge */}
                 <CardItem
                   translateZ="50"
@@ -45,7 +45,7 @@ export const ProjectsListing = () => {
                   translateZ="60"
                   className="w-full h-56 sm:h-64 lg:h-72 overflow-hidden rounded-2xl mb-6 relative"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/80 z-10" />
+                  <div className="absolute inset-0 bg-linear-to-b from-transparent via-black/40 to-black/80 z-10" />
                   <div className="relative w-full h-full bg-[#0f1629] rounded-2xl overflow-hidden">
                     <Image
                       src="/bg.png"
