@@ -43,4 +43,15 @@ interface MagicButtonProps {
   handleClick?: () => void;
   otherClasses?: string;
   variant?: Variant;
-};
+}
+
+interface CardContainerProps {
+  children?: React.ReactNode;
+  className?: string;
+  containerClassName?: string;
+}
+
+interface CardBodyProps {
+  children: React.ReactNode;
+  className?: string;
+}

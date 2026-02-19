@@ -10,3 +10,4 @@ export * from './TextGenerateEffect';
 export * from './CanvasRevealEffect';
 export * from './InfiniteMovingCards';
 export * from './BackgroundGradientAnimation';
+export * from './3dCard';

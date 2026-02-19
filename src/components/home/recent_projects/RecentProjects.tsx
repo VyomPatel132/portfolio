@@ -1,4 +1,4 @@
-import { PinContainer } from "@/components/ui";
+import { MagicButton, PinContainer } from "@/components/ui";
 import { projects } from "@/data";
 import Image from "next/image";
 import React from "react";
@@ -62,6 +62,13 @@ export const RecentProjects = () => {
             </PinContainer>
           </div>
         ))}
+      </div>
+      <div className="flex items-center justify-center mt-10">
+        <MagicButton
+          title="View All Projects"
+          icon={<FaLocationArrow />}
+          position="right"
+        />
       </div>
     </div>
   );

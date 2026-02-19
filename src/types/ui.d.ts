@@ -142,3 +142,16 @@ type ButtonProps = {
   className?: string;
   [key: string]: any;
 };
+
+type CardItemProps = {
+  as?: React.ElementType;
+  children: React.ReactNode;
+  className?: string;
+  translateX?: number | string;
+  translateY?: number | string;
+  translateZ?: number | string;
+  rotateX?: number | string;
+  rotateY?: number | string;
+  rotateZ?: number | string;
+  [key: string]: any;
+};
