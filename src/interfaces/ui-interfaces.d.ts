@@ -55,3 +55,11 @@ interface CardBodyProps {
   children: React.ReactNode;
   className?: string;
 }
+
+interface ShimmerButtonProps {
+  title: string;
+  icon?: React.ReactNode;
+  handleClick?: () => void;
+  otherClasses?: string;
+  position?: "left" | "right";
+}

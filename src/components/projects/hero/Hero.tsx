@@ -1,14 +1,15 @@
 import React from "react";
 import { cn } from "@/utils/cn";
-import {
-  MagicButton,
-  Spotlight,
-  TextGenerateEffect,
-} from "@/components/ui";
-import Link from "next/link";
-import { FaLocationArrow } from "react-icons/fa6";
+import { Spotlight, TextGenerateEffect } from "@/components/ui";
 
-export const Hero = () => {
+interface HeroProps {
+  projectCount?: number;
+  categoryCount?: number;
+}
+
+export const Hero: React.FC<HeroProps> = (props) => {
+  const { projectCount = 0, categoryCount = 0 } = props;
+
   return (
     <div className="pb-20 pt-36">
       <div>
@@ -38,32 +39,27 @@ export const Hero = () => {
 
       <div className="flex justify-center relative my-20 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
-          <h2 className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-            Crafting Interactive Interfaces with Next.js
+          <h2 className="inline-block rounded-lg border border-purple-500/40 px-3 py-1 text-sm text-purple-300 mb-6">
+            Portfolio Showcase
           </h2>
 
-          <TextGenerateEffect
-            words="Building fast, accessible, and beautiful web experiences"
-            className="text-center text-[40px] md:text-5xl lg:text-6xl"
-          />
-
-          <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi, I&apos;m Vyom Patel — a frontend developer specializing in React
-            and TypeScript, crafting responsive UIs from concept to production.
+          <p className="text-center md:tracking-wider mb-4 text-[30px] md:text-4xl lg:text-6xl">
+            My{" "}
+            <span className="bg-linear-to-r from-purple-400 via-purple-300 to-cyan-100 bg-clip-text text-transparent">
+              Projects
+            </span>
           </p>
 
-          <div className="flex gap-6">
-            <Link href="#about">
-              <MagicButton
-                title="View my work"
-                icon={<FaLocationArrow />}
-                position="right"
-                variant="primary"
-              />
-            </Link>
-            <Link href="mailto:vyomp59@gmail.com">
-              <MagicButton title="Get in touch" />
-            </Link>
+          <TextGenerateEffect
+            words="Explore my collection of web applications, tools, and creative solutions built with modern technologies"
+            className="text-center text-[24px]"
+          />
+
+          <div className="flex items-center justify-center gap-3 mt-6 text-sm text-zinc-500">
+            <span className="text-cyan-400">•</span>
+            <span>{projectCount} Projects</span>
+            <span className="text-purple-400">•</span>
+            <span>{categoryCount} Categories</span>
           </div>
         </div>
       </div>

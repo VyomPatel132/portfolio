@@ -1,15 +1,8 @@
 export const navItems = [
   { name: "Home", link: "/" },
   { name: "About", link: "#about" },
-  { name: "Projects", link: "#projects" },
-  { name: "Contact", link: "#contact" },
-];
-
-export const roleItems = [
-  "React.js developer",
-  "Next.js developer",
-  "Front End developer",
-  "React Specialt",
+  { name: "Projects", link: "/projects" },
+  { name: "Contact", link: "/contact" },
 ];
 
 export const gridItems = [
@@ -87,6 +80,7 @@ export const projects = [
     img: "/p1.svg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
     link: "https://github.com/adrianhajdin?tab=repositories",
+    category: "Web Application",
   },
   {
     id: 2,
@@ -95,6 +89,7 @@ export const projects = [
     img: "/p2.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
     link: "https://github.com/adrianhajdin/zoom-clone",
+    category: "Mobile App",
   },
   {
     id: 3,
@@ -103,6 +98,7 @@ export const projects = [
     img: "/p3.svg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
     link: "https://github.com/adrianhajdin/ai_saas_app",
+    category: "Saas Product",
   },
   {
     id: 4,
@@ -111,6 +107,30 @@ export const projects = [
     img: "/p4.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
     link: "https://github.com/adrianhajdin/iphone",
+    category: "Web Tool",
+  },
+];
+
+export const categories = [
+  {
+    id: 0,
+    title: "All",
+  },
+  {
+    id: 1,
+    title: "Web Application",
+  },
+  {
+    id: 2,
+    title: "Mobile App",
+  },
+  {
+    id: 3,
+    title: "Saas Product",
+  },
+  {
+    id: 4,
+    title: "Web Tool",
   },
 ];
 
