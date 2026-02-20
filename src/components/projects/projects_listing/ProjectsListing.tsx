@@ -23,26 +23,23 @@ export const ProjectsListing = () => {
           <div key={project.id} className="group">
             <CardContainer className="inter-var h-full">
               <CardBody className="bg-[#000319]/70 backdrop-blur-md relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/10 border border-white/15 w-full h-full rounded-3xl p-5 sm:p-6 transition-all duration-300">
-                {/* Category + Featured badge */}
                 <CardItem
                   translateZ="50"
-                  className="flex items-center justify-between mb-4"
+                  as="p"
+                  className={cn(
+                    "flex items-center justify-between mb-4 px-3 py-1 text-xs font-medium rounded-full",
+                    `bg-${randomColor}-500/20`,
+                    `text-${randomColor}-400`,
+                    `border border-${randomColor}-500/30`,
+                  )}
                 >
-                  <span
-                    className={cn(
-                      "px-3 py-1 text-xs font-medium rounded-full",
-                      `bg-${randomColor}-500/20`,
-                      `text-${randomColor}-400`,
-                      `border border-${randomColor}-500/30`,
-                    )}
-                  >
-                    {project.category || "Project"}
-                  </span>
+                  {project.category || "Project"}
                 </CardItem>
 
-                {/* Image container */}
                 <CardItem
                   translateZ="60"
+                  rotateX="10"
+                  rotateY="-10"
                   className="w-full h-56 sm:h-64 lg:h-72 overflow-hidden rounded-2xl mb-6 relative"
                 >
                   <div className="absolute inset-0 bg-linear-to-b from-transparent via-black/40 to-black/80 z-10" />
@@ -62,7 +59,6 @@ export const ProjectsListing = () => {
                   </div>
                 </CardItem>
 
-                {/* Title & Description */}
                 <CardItem
                   translateZ="40"
                   as="h2"
@@ -79,7 +75,6 @@ export const ProjectsListing = () => {
                   {project.des}
                 </CardItem>
 
-                {/* Tech icons + CTA */}
                 <div className="flex items-center justify-between mt-auto">
                   <CardItem translateZ="20" className="flex items-center">
                     {project.iconLists.map((icon, idx) => (

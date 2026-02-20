@@ -18,12 +18,15 @@ export function Button({
   borderClassName,
   duration,
   className,
+  variant = "list",
+  colSpan = 2,
   ...otherProps
 }: ButtonProps) {
   return (
     <Component
       className={cn(
-        "relative overflow-hidden bg-transparent p-px text-xl md:col-span-2",
+        "relative overflow-hidden bg-transparent p-px text-xl",
+        colSpan === 2 && "col-span-2 md:col-span-2",
         containerClassName,
       )}
       style={{
@@ -47,7 +50,9 @@ export function Button({
 
       <div
         className={cn(
-          "relative flex h-full w-full items-center justify-center border border-slate-800 bg-slate-900/80 text-sm text-white antialiased backdrop-blur-xl",
+          "relative flex h-full w-full border border-slate-800 bg-slate-900/80 text-sm text-white antialiased backdrop-blur-xl",
+          variant === "grid" && "items-start justify-start text-center",
+          variant === "list" && "items-center justify-center text-left px-5 py-4 gap-3",
           className,
         )}
         style={{

@@ -253,3 +253,48 @@ export const socialMedia = [
     link: "https://www.instagram.com/vpp145/",
   },
 ];
+
+export const PROJECT_DETAIL = {
+  about: [
+    "This project represents a comprehensive solution designed to address modern web development challenges. Built with cutting-edge technologies and best practices, it delivers exceptional performance and user experience.",
+    "The development process involved careful planning, iterative design, and rigorous testing to ensure every feature works flawlessly. Special attention was paid to accessibility, performance optimization, and responsive design principles.",
+    "Throughout the project, I focused on creating clean, maintainable code while implementing advanced features that enhance usability. The result is a robust application that meets both user needs and technical requirements.",
+  ],
+  techStack: ["React", "D3.js", "Chart.js", "REST API"],
+  info: {
+    category: "Data Visualization",
+    status: "Completed",
+    year: "2024",
+    role: "Full Stack Developer",
+  },
+  features: [
+    "Responsive design that works seamlessly across all devices",
+    "Modern and intuitive user interface with smooth animations",
+    "Fast performance with optimized code and lazy loading",
+    "Secure authentication and data protection",
+    "Real-time updates and notifications",
+    "Advanced search and filtering capabilities",
+    "Integration with third-party services and APIs",
+    "Comprehensive documentation and support",
+  ],
+  challenges: [
+    {
+      challenge:
+        "Handling large datasets with complex visualizations while maintaining 60fps rendering across devices.",
+      solution:
+        "Implemented virtualized rendering with Web Workers for heavy computations, combined with canvas-based drawing for large data sets, reducing render time by 85%.",
+    },
+    {
+      challenge:
+        "Real-time data synchronization across multiple clients without overwhelming the server or causing UI jank.",
+      solution:
+        "Designed a WebSocket-based pub/sub system with optimistic UI updates and intelligent debouncing, achieving sub-100ms latency for live data feeds.",
+    },
+    {
+      challenge:
+        "Ensuring accessibility compliance (WCAG 2.1 AA) for data-rich dashboards with interactive charts and tables.",
+      solution:
+        "Built custom ARIA-live regions for dynamic content, added keyboard navigation to all chart components, and created screen-reader-friendly data summaries alongside visual charts.",
+    },
+  ],
+};

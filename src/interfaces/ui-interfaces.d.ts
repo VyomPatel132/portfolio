@@ -63,3 +63,16 @@ interface ShimmerButtonProps {
   otherClasses?: string;
   position?: "left" | "right";
 }
+
+interface ButtonProps {
+  borderRadius?: string;
+  children: React.ReactNode;
+  as?: any;
+  containerClassName?: string;
+  borderClassName?: string;
+  duration?: number;
+  className?: string;
+  variant?: ButtonVariant;
+  colSpan?: number;
+  [key: string]: any;
+};

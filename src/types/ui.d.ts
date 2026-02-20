@@ -132,16 +132,7 @@ type MovingBorderProps = {
   [key: string]: any;
 };
 
-type ButtonProps = {
-  borderRadius?: string;
-  children: React.ReactNode;
-  as?: any;
-  containerClassName?: string;
-  borderClassName?: string;
-  duration?: number;
-  className?: string;
-  [key: string]: any;
-};
+type ButtonVariant = "grid" | "list";
 
 type CardItemProps = {
   as?: React.ElementType;
