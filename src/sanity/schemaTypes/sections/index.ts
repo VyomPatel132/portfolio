@@ -1,3 +1,4 @@
+import { homeHero } from "./home_hero_section";
 import { imageTitleDescriptionArray } from "./image_title_description_array_section";
 import { titleBlog } from "./image_title_description_array_section/title_blog";
 import { moreConversion } from "./more_conversation_section";
@@ -9,5 +10,6 @@ export const sectionType = [
   moreConversion,
   imageTitleDescriptionArray,
   titleBlog,
-  readBlogTogether
+  readBlogTogether,
+  homeHero
 ];

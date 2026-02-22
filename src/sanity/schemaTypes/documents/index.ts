@@ -5,6 +5,7 @@ import { footerBanner } from "./footer/footer_banner";
 import { header } from "./header";
 import { newsLetter } from "./news_letter";
 import { sectionSidebar } from "./section_sidebar";
+import { setting } from "./setting";
 
 export const documentsTypes = [
   header,
@@ -14,4 +15,5 @@ export const documentsTypes = [
   author,
   newsLetter,
   sectionSidebar,
+  setting
 ];
