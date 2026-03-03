@@ -2,7 +2,7 @@ import type { StructureResolver } from "sanity/structure";
 import { AiOutlineGlobal } from "react-icons/ai";
 import { HiOutlineTerminal } from "react-icons/hi";
 import { RiPagesLine } from "react-icons/ri";
-import { InitialValueTemplates } from "@/desk/initial_value_templates";
+import { FaHome } from "react-icons/fa";
 
 // https://www.sanity.io/docs/structure-builder-cheat-sheet
 export const structure: StructureResolver = (S) =>
@@ -25,9 +25,16 @@ export const structure: StructureResolver = (S) =>
             ]),
         ),
       S.divider(),
-      S.documentListItem()
-        .title("Settings")
-        .id(InitialValueTemplates.SETTING)
-        .schemaType("setting")
-        .icon(RiPagesLine),
+      S.listItem()
+        .title("Site Pages (Unique)")
+        .icon(RiPagesLine)
+        .child(
+          S.list()
+            .title("Site Pages (Unique)")
+            .items([
+              S.documentTypeListItem("home")
+                .title("Home Page")
+                .icon(FaHome),
+            ]),
+        ),
     ]);
