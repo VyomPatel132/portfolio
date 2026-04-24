@@ -7,12 +7,16 @@ import {
   useMotionValueEvent,
 } from "motion/react";
 import { cn } from "@/utils/cn";
+import { useSanityQuery } from "@/hooks";
+import { HeaderData, NavLink } from "@/types/header";
+import { header_query } from "@/query";
 
 export const FloatingNav: React.FC<FloatingNavProps> = ({
   navItems,
   className,
 }) => {
   const { scrollYProgress } = useScroll();
+  const { data: headerData, loading: headerLoading } = useSanityQuery<HeaderData>(header_query);
 
   const [visible, setVisible] = useState(false);
 
@@ -52,7 +56,7 @@ export const FloatingNav: React.FC<FloatingNavProps> = ({
           className,
         )}
       >
-        {navItems.map((navItem: any, idx: number) => (
+        {headerData?.nav_links.map((navItem: NavLink, idx: number) => (
           <a
             key={`link=${idx}`}
             href={navItem.link}
@@ -61,7 +65,7 @@ export const FloatingNav: React.FC<FloatingNavProps> = ({
             )}
           >
             <span className="block sm:hidden">{navItem.icon}</span>
-            <span className="text-sm cursor-pointer!">{navItem.name}</span>
+            <span className="text-sm cursor-pointer!">{navItem.label}</span>
           </a>
         ))}
       </motion.div>
