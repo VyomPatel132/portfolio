@@ -12,7 +12,6 @@ import { HeaderData, NavLink } from "@/types/header";
 import { header_query } from "@/query";
 
 export const FloatingNav: React.FC<FloatingNavProps> = ({
-  navItems,
   className,
 }) => {
   const { scrollYProgress } = useScroll();

@@ -1,3 +1,5 @@
+'use client';
+
 import { client } from "@/sanity/lib/client";
 import { useEffect, useRef, useState } from "react";
 
