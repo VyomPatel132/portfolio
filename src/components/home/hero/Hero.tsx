@@ -8,7 +8,7 @@ import {
 import Link from "next/link";
 import { FaLocationArrow } from "react-icons/fa6";
 
-export const Hero = () => {
+export const Hero = ({ data }: { data: HomeHeroSectionData }) => {
   return (
     <div className="pb-20 pt-36">
       <div>
@@ -39,30 +39,29 @@ export const Hero = () => {
       <div className="flex justify-center relative my-20 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <h2 className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-            Crafting Interactive Interfaces with Next.js
+            {data.tag_line}
           </h2>
 
           <TextGenerateEffect
-            words="Building fast, accessible, and beautiful web experiences"
+            words={`${data.heading_white} ${data.heading_purple}`}
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi, I&apos;m Vyom Patel — a frontend developer specializing in React
-            and TypeScript, crafting responsive UIs from concept to production.
+            {data.hero_description}
           </p>
 
           <div className="flex gap-6">
-            <Link href="#about">
+            <Link href={data.my_work_button.link || "#about"}>
               <MagicButton
-                title="View my work"
+                title={data.my_work_button.label}
                 icon={<FaLocationArrow />}
                 position="right"
                 variant="primary"
               />
             </Link>
-            <Link href="mailto:vyomp59@gmail.com">
-              <MagicButton title="Get in touch" />
+            <Link href={data.get_in_touch_button.link || "#contact"}>
+              <MagicButton title={data.get_in_touch_button.label} />
             </Link>
           </div>
         </div>

@@ -4,8 +4,18 @@ import { socialMedia } from "@/data";
 import Image from "next/image";
 import Link from "next/link";
 import { FaLocationArrow } from "react-icons/fa6";
+import { useSanityQuery } from "@/hooks";
+import { footer_query } from "@/query";
+import { FooterData } from "@/types/header";
+import { urlFor } from "@/sanity/lib/image";
 
 export const Footer = () => {
+  const { data: footerData, loading } =
+    useSanityQuery<FooterData>(footer_query);
+  const heading = footerData?.footer_banner.heading;
+  const highlighted_word = footerData?.footer_banner.highlighted_word;
+  const heading_parts = heading?.split(highlighted_word || "") || [];
+
   return (
     <footer className="w-full pb-10 bg-[#000319]">
       <div className="w-full absolute left-0 -bottom-72 min-h-96">
@@ -20,36 +30,39 @@ export const Footer = () => {
 
       <div className="flex flex-col items-center">
         <h1 className="heading lg:max-w-[45vw]">
-          Ready to elevate <span className="text-purple-300">your</span> digital presence?
+          {heading_parts[0]}{" "}
+          <span className="text-purple-300">{highlighted_word}</span>{" "}
+          {heading_parts[1]}
         </h1>
         <p className="text-[#c1c2d3] md:mt-10 my-5 text-center">
-          I&apos;m available for freelance and collaboration opportunities. 
-          Let&apos;s discuss how I can help bring your ideas to life.
+          {footerData?.footer_banner.subtitle}
         </p>
-        <Link href="mailto:vyomp59@gmail.com">
-          <MagicButton
-            title="Let's get in touch"
-            icon={<FaLocationArrow />}
-            position="right"
-          />
-        </Link>
+        {footerData?.footer_banner.button_link && (
+          <Link href={footerData?.footer_banner.button_link}>
+            <MagicButton
+              title={footerData?.footer_banner.button_text || ""}
+              icon={<FaLocationArrow />}
+              position="right"
+            />
+          </Link>
+        )}
       </div>
 
       <div className="flex mt-16 p-5 md:flex-row flex-col justify-between items-center">
         <p className="md:text-base text-sm md:font-normal font-light">
-          Copyright © 2026 Vyom Patel. All rights reserved.
+          {footerData?.copyright_text || "© 2024 Vyom. All rights reserved."}
         </p>
 
         <div className="flex items-center md:gap-3 gap-6 mt-6">
-          {socialMedia.map((profile) => (
+          {footerData?.social_links.map((profile, index) => (
             <Link
-              key={profile.id}
+              key={index}
               className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-150 bg-opacity-75 bg-[#000319] rounded-lg border border-[#ffffff20]"
-              href={profile.link}
+              href={profile.url}
             >
               <Image
-                src={profile.img}
-                alt={profile.img}
+                src={urlFor(profile.icon).url()}
+                alt={profile.platform}
                 width={20}
                 height={20}
               />

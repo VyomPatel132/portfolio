@@ -11,30 +11,56 @@ export const footer = defineType({
       type: "string",
     }),
     defineField({
-      name: "footer_logo",
-      title: "Footer Logo",
-      type: "custom_image",
-    }),
-    defineField({
-      name: "footer_links",
-      title: "Footer Links",
-      type: "array",
-      of: [{ type: "label_link" }],
-    }),
-    defineField({
-      name: "contact_link",
-      title: "Contect Links",
-      type: "label_link",
+      name: "footer_banner",
+      title: "Footer Banner",
+      type: "footer_banner",
     }),
     defineField({
       name: "copyright_text",
       title: "Copyright Text",
       type: "string",
+      description: 'e.g. "Copyright © 2026 Vyom Patel. All rights reserved."',
     }),
     defineField({
-      name: "contact_no",
-      title: "Contact No",
-      type: "string",
+      name: "social_links",
+      title: "Social Links",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          name: "social_item",
+          fields: [
+            defineField({
+              name: "platform",
+              title: "Platform",
+              type: "string",
+              options: {
+                list: [
+                  { title: "GitHub", value: "github" },
+                  { title: "WhatsApp", value: "whatsapp" },
+                  { title: "LinkedIn", value: "linkedin" },
+                  { title: "Instagram", value: "instagram" },
+                  { title: "Twitter/X", value: "twitter" },
+                  { title: "YouTube", value: "youtube" },
+                ],
+              },
+            }),
+            defineField({
+              name: "url",
+              title: "URL",
+              type: "url",
+            }),
+            defineField({
+              name: "icon",
+              title: "Icon",
+              type: "image",
+            })
+          ],
+          preview: {
+            select: { title: "platform", subtitle: "url" },
+          },
+        },
+      ],
     }),
   ],
 });

@@ -3,7 +3,6 @@
 import React from "react";
 import { ThemeProvider } from "@/components/providers";
 import { FloatingNav } from "@/components/ui";
-import { navItems } from "@/data";
 import { Footer } from "../footer";
 import { usePathname } from "next/navigation";
 
@@ -22,7 +21,7 @@ export const App = ({
       enableSystem
       disableTransitionOnChange
     >
-      {!isStudio && <FloatingNav navItems={navItems} />}
+      {!isStudio && <FloatingNav />}
       {children}
       {!isStudio && <Footer />}
     </ThemeProvider>
