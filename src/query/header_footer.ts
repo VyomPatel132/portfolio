@@ -1,9 +1,9 @@
 import { groq } from "next-sanity";
 
-const header_query = groq`*[_type == 'header']{
+const header_query = groq`*[_type == 'header'][0]{
   title,
   nav_links
-}[0]`;
+}`;
 
 const footer_query = groq`*[_type == 'footer'][0]{
   title,

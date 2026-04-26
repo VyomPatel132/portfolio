@@ -12,19 +12,33 @@ export const homeHero = defineType({
       type: "string",
     }),
     defineField({
+      name: "tag_line",
+      title: "Tag Line",
+      type: "string",
+      description: 'Small label above heading e.g. "CRAFTING INTERACTIVE INTERFACES WITH NEXT.JS"',
+    }),
+    defineField({
+      name: "heading_white",
+      title: "Heading (White Part)",
+      type: "string",
+      description: 'e.g. "Building fast, accessible, and"',
+    }),
+    defineField({
+      name: "heading_purple",
+      title: "Heading (Purple Part)",
+      type: "string",
+      description: 'e.g. "beautiful web experiences"',
+    }),
+    defineField({
       name: "hero_image",
       title: "Hero Image",
       type: "custom_image",
     }),
     defineField({
-      name: 'hero_title',
-      title: 'Hero Title',
-      type: 'string',
-    }),
-    defineField({
       name: 'hero_description',
       title: 'Hero Description',
       type: 'text',
+      rows: 4,
     }),
     defineField({
       name: 'title_image',
@@ -41,11 +55,11 @@ export const homeHero = defineType({
       title: 'Get In Touch Button',
       type: 'button',
     }),
-    defineField({
-      name: 'bottom_description',
-      title: 'Bottom Description',
-      type: 'text',
-    }),
+    // defineField({
+    //   name: 'bottom_description',
+    //   title: 'Bottom Description',
+    //   type: 'text',
+    // }),
     defineField({
       name: 'section_theme',
       title: 'Section Theme',
