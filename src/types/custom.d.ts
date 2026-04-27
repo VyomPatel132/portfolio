@@ -30,3 +30,30 @@ type HomeHeroSectionData = SanityBase & {
   get_in_touch_button: ButtonPropsData;
   my_work_button: ButtonPropsData;
 };
+
+type GridItemVariant =
+  | "feature"
+  | "tech_stack"
+  | "globe"
+  | "email_cta"
+  | "inside_scoop"
+  | "grid_feature";
+
+type GridItem = {
+  _type: string;
+  title: string;
+  description?: string;
+  variant?: GridItemVariant;
+  tech_list?: string[];
+  img?: string;
+  spareImg?: string;
+  className?: string;
+  imgClassName?: string;
+  titleClassName?: string;
+};
+
+type HomeGridSectionData = SanityBase & {
+  _type: "home_grid_section";
+  title: string;
+  grid_items: GridItem[];
+};

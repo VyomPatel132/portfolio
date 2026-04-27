@@ -28,15 +28,16 @@ export const Home = () => {
   return (
     <main className="relative bg-[#000319] flex justify-center items-center flex-col mx-auto sm:px-10 px-5 overflow-clip">
       <div className="max-w-7xl w-full">
-        {homeData?.sections.map((section: HomeSections) => {
+        {homeData?.sections.map((section: HomeSections, index) => {
           switch(section._type) {
             case "home_hero_section":
-              return <Hero data={section} />;
+              return <Hero key={index} data={section} />;
+            case "home_grid_section":
+              return <Grid key={index} data={section} />;
             default:
               return null;
           }
         })}
-        <Grid />
         <RecentProjects />
         {/* <Testimonial /> */}
         <Experiences />

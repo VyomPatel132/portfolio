@@ -12,10 +12,27 @@ get_in_touch_button{
     link
 },
 my_work_button{
-_type,
-label,
-link
+    _type,
+    label,
+    link
 }
 `;
 
-export { home_hero_section };
+const home_grid_section = `
+_type,
+title,
+grid_items[]{
+    _type,
+    title,
+    description,
+    variant,
+    "img": image.asset->url,
+    "spareImg": spare_image.asset->url,
+    className,
+    imgClassName,
+    titleClassName,
+    tech_list
+}
+`;
+
+export { home_hero_section, home_grid_section };

@@ -1,3 +1,5 @@
+import { gridSection } from "./home_grid_section";
+import { gridItems } from "./home_grid_section/grid_item";
 import { homeHero } from "./home_hero_section";
 import { imageTitleDescriptionArray } from "./image_title_description_array_section";
 import { titleBlog } from "./image_title_description_array_section/title_blog";
@@ -8,12 +10,14 @@ import { readBlogTogether } from "./read_blog_together";
 import { titleDescriptionSideImage } from "./title_description_side_image_Section";
 
 export const sectionType = [
-  titleDescriptionSideImage,
-  moreConversion,
-  imageTitleDescriptionArray,
-  titleBlog,
-  readBlogTogether,
   homeHero,
+  titleBlog,
+  gridItems,
+  gridSection,
   projectHero,
   projectAbout,
+  moreConversion,
+  readBlogTogether,
+  titleDescriptionSideImage,
+  imageTitleDescriptionArray,
 ];
