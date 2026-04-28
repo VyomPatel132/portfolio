@@ -5,10 +5,11 @@ import { Spotlight, TextGenerateEffect } from "@/components/ui";
 interface HeroProps {
   projectCount?: number;
   categoryCount?: number;
+  data: ProjectHeroSectionData;
 }
 
 export const Hero: React.FC<HeroProps> = (props) => {
-  const { projectCount = 0, categoryCount = 0 } = props;
+  const { projectCount = 0, categoryCount = 0, data } = props;
 
   return (
     <div className="pb-20 pt-36">
@@ -40,13 +41,13 @@ export const Hero: React.FC<HeroProps> = (props) => {
       <div className="flex justify-center relative my-20 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <h2 className="inline-block rounded-lg border border-purple-500/40 px-3 py-1 text-sm text-purple-300 mb-6">
-            Portfolio Showcase
+            {data.badge}
           </h2>
 
           <p className="text-center md:tracking-wider mb-4 text-[30px] md:text-4xl lg:text-6xl">
-            My{" "}
+            {data.title_prefix}{" "}
             <span className="bg-linear-to-r from-purple-400 via-purple-300 to-cyan-100 bg-clip-text text-transparent">
-              Projects
+              {data.title_highlight}
             </span>
           </p>
 

@@ -1,5 +1,5 @@
 import { groq } from "next-sanity";
-import { home_grid_section, home_hero_section } from "./sections";
+import { home_grid_section, home_hero_section, project_hero_section } from "./sections";
 
 const homePage = groq`*[_type == 'home'][0]{
   _type,
@@ -15,4 +15,15 @@ const homePage = groq`*[_type == 'home'][0]{
   }
 }`;
 
-export { homePage };
+const projectPage = groq`*[_type == 'project_page'][0]{
+  _type,
+  title,
+  "slug": slug.current,
+  "sections": section[]{
+    (_type == "project_hero_section") => {
+      ${project_hero_section}
+    }
+  }
+}`;
+
+export { homePage, projectPage };

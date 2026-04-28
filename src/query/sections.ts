@@ -35,4 +35,12 @@ grid_items[]{
 }
 `;
 
-export { home_hero_section, home_grid_section };
+const project_hero_section = `
+_type,
+badge,
+title_prefix,
+title_highlight,
+description
+`;
+
+export { home_hero_section, home_grid_section, project_hero_section };

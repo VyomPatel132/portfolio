@@ -57,3 +57,11 @@ type HomeGridSectionData = SanityBase & {
   title: string;
   grid_items: GridItem[];
 };
+
+type ProjectHeroSectionData = SanityBase & {
+  _type: "project_hero_section";
+  badge: string;
+  description: string;
+  title_highlight: string;
+  title_prefix: string;
+}
