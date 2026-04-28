@@ -1,4 +1,4 @@
-type HomeSections = HomeHeroSectionData | HomeGridSectionData;
+type HomeSections = HomeHeroSectionData | HomeGridSectionData | HomeExperienceSectionData;
 type ProjectSections = ProjectHeroSectionData;
 
 export type HomePageData = {

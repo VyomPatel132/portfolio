@@ -47,7 +47,11 @@ export const home = defineType({
       name: "section",
       title: "Section",
       type: "array",
-      of: [{ type: "home_hero_section" }, { type: "home_grid_section" }],
+      of: [
+        { type: "home_hero_section" },
+        { type: "home_grid_section" },
+        { type: "home_experience_section" },
+      ],
       group: "main",
     }),
     defineField({

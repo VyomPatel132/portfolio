@@ -65,3 +65,18 @@ type ProjectHeroSectionData = SanityBase & {
   title_highlight: string;
   title_prefix: string;
 }
+
+type ExperienceItem = {
+  _type: string;
+  title: string;
+  description: string;
+  icon: string;
+  className?: string;
+}
+
+type HomeExperienceSectionData = SanityBase & {
+  _type: "home_experience_section";
+  title_prefix: string;
+  title_highlight: string;
+  experiences: ExperienceItem[];
+};

@@ -35,6 +35,19 @@ grid_items[]{
 }
 `;
 
+const home_experience_section = `
+_type,
+title_prefix,
+title_highlight,
+experiences[]{
+    _type,
+    title,
+    description,
+    "icon": icon.asset->url,
+    className
+}
+`;
+
 const project_hero_section = `
 _type,
 badge,
@@ -43,4 +56,9 @@ title_highlight,
 description
 `;
 
-export { home_hero_section, home_grid_section, project_hero_section };
+export {
+  home_hero_section,
+  home_grid_section,
+  project_hero_section,
+  home_experience_section,
+};
