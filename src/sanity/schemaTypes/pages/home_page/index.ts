@@ -50,6 +50,7 @@ export const home = defineType({
       of: [
         { type: "home_hero_section" },
         { type: "home_grid_section" },
+        { type: "home_featured_project_section" },
         { type: "home_experience_section" },
       ],
       group: "main",

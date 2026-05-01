@@ -1,5 +1,6 @@
 import { experienceSection } from "./home_experience_section";
 import { experienceItem } from "./home_experience_section/experience_item";
+import { featuredProject } from "./home_featured_project_section";
 import { gridSection } from "./home_grid_section";
 import { gridItems } from "./home_grid_section/grid_item";
 import { homeHero } from "./home_hero_section";
@@ -20,6 +21,7 @@ export const sectionType = [
   projectAbout,
   moreConversion,
   experienceItem,
+  featuredProject,
   readBlogTogether,
   experienceSection,
   titleDescriptionSideImage,
