@@ -65,7 +65,33 @@ export const projectDetail = defineType({
       name: "tech_stack",
       title: "Tech Stack",
       type: "array",
-      of: [{ type: "string" }],
+      of: [
+        {
+          type: "object",
+          name: "tech",
+          fields: [
+            defineField({
+              name: "name",
+              title: "Technology Name",
+              type: "string",
+            }),
+            defineField({
+              name: "logo",
+              title: "Logo",
+              type: "image",
+              options: {
+                hotspot: true,
+              },
+            }),
+          ],
+          preview: {
+            select: {
+              title: "name",
+              media: "logo",
+            },
+          },
+        },
+      ],
     }),
     defineField({
       name: "project_status",

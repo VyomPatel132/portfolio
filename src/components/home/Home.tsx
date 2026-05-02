@@ -34,13 +34,15 @@ export const Home = () => {
               return <Hero key={index} data={section} />;
             case "home_grid_section":
               return <Grid key={index} data={section} />;
+            case "home_featured_project_section":
+              return <RecentProjects key={index} data={section} />;
             case "home_experience_section":
               return <Experiences key={index} data={section} />;
             default:
               return null;
           }
         })}
-        <RecentProjects />
+        {/* <RecentProjects /> */}
         {/* <Testimonial /> */}
         {/* <Experiences /> */}
         <Approach />

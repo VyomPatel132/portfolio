@@ -56,9 +56,27 @@ title_highlight,
 description
 `;
 
+const home_featured_project_section = `
+_type,
+title_prefix,
+title_highlight,
+featured_projects[]->{
+    _type,
+    project_title,
+    project_description,
+    "image": project_image.asset->url,
+    live_link,
+    tech_stack[] {
+      name,
+      "logo": logo.asset->url
+    }
+}
+`;
+
 export {
   home_hero_section,
   home_grid_section,
   project_hero_section,
   home_experience_section,
+  home_featured_project_section,
 };
