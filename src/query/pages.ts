@@ -1,5 +1,5 @@
 import { groq } from "next-sanity";
-import { home_experience_section, home_featured_project_section, home_grid_section, home_hero_section, project_hero_section } from "./sections";
+import { home_approach_section, home_experience_section, home_featured_project_section, home_grid_section, home_hero_section, project_hero_section } from "./sections";
 
 const homePage = groq`*[_type == 'home'][0]{
   _type,
@@ -17,6 +17,9 @@ const homePage = groq`*[_type == 'home'][0]{
     },
     (_type == "home_experience_section") => {
       ${home_experience_section}
+    },
+    (_type == "home_approach_section") => {
+      ${home_approach_section}
     }
   }
 }`;

@@ -38,6 +38,8 @@ export const Home = () => {
               return <RecentProjects key={index} data={section} />;
             case "home_experience_section":
               return <Experiences key={index} data={section} />;
+            case "home_approach_section":
+              return <Approach key={index} data={section} />;
             default:
               return null;
           }
@@ -45,7 +47,7 @@ export const Home = () => {
         {/* <RecentProjects /> */}
         {/* <Testimonial /> */}
         {/* <Experiences /> */}
-        <Approach />
+        {/* <Approach /> */}
       </div>
     </main>
   );

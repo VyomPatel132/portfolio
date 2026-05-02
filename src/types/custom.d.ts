@@ -64,7 +64,7 @@ type ProjectHeroSectionData = SanityBase & {
   description: string;
   title_highlight: string;
   title_prefix: string;
-}
+};
 
 type ExperienceItem = {
   _type: string;
@@ -72,7 +72,7 @@ type ExperienceItem = {
   description: string;
   icon: string;
   className?: string;
-}
+};
 
 type HomeExperienceSectionData = SanityBase & {
   _type: "home_experience_section";
@@ -91,11 +91,35 @@ type FeaturedProject = {
     name: string;
     logo: string;
   }[];
-}
+};
 
 type HomeFeaturedProjectSectionData = SanityBase & {
   _type: "home_featured_project_section";
   title_prefix: string;
   title_highlight: string;
   featured_projects: FeaturedProject[];
+};
+
+type DotColors = {
+  _type: string;
+  r: number;
+  g: number;
+  b: number;
+};
+
+type Phases = {
+  _type: string;
+  order: string;
+  title: string;
+  description: string;
+  animation_speed: number;
+  container_bg: string;
+  dot_colors: DotColors[];
+};
+
+type HomeApproachSectionData = SanityBase & {
+  _type: "home_approach_section";
+  title_prefix: string;
+  title_highlight: string;
+  phases: Phases[];
 };

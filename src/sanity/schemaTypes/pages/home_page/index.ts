@@ -52,6 +52,7 @@ export const home = defineType({
         { type: "home_grid_section" },
         { type: "home_featured_project_section" },
         { type: "home_experience_section" },
+        { type: "home_approach_section" }
       ],
       group: "main",
     }),

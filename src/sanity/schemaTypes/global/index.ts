@@ -1,6 +1,7 @@
 import { button } from "./button";
 import { customImage } from "./custom_image";
 import { labelLink } from "./label_link";
+import { rgbColors } from "./rgb";
 import { richText } from "./rich_text";
 import { seo } from "./seo";
 import { metaAttribute } from "./seo/meta_attribute";
@@ -10,14 +11,15 @@ import { title } from "./title";
 import { titleContent } from "./title_content";
 
 export const globalTypes = [
-  customImage,
-  labelLink,
-  button,
-  richText,
-  titleContent,
-  title,
   seo,
+  title,
+  button,
   metaTag,
+  richText,
+  labelLink,
   openGraph,
-  metaAttribute
+  rgbColors,
+  customImage,
+  titleContent,
+  metaAttribute,
 ];

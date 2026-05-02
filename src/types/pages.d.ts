@@ -1,4 +1,9 @@
-type HomeSections = HomeHeroSectionData | HomeGridSectionData | HomeExperienceSectionData | HomeFeaturedProjectSectionData;
+type HomeSections =
+  | HomeHeroSectionData
+  | HomeGridSectionData
+  | HomeExperienceSectionData
+  | HomeFeaturedProjectSectionData
+  | HomeApproachSectionData;
 type ProjectSections = ProjectHeroSectionData;
 
 export type HomePageData = {
@@ -13,4 +18,4 @@ export type ProjectsPageData = {
   title: string;
   slug: string;
   sections: ProjectSections[];
-}
+};

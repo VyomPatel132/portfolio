@@ -73,10 +73,31 @@ featured_projects[]->{
 }
 `;
 
+const home_approach_section = `
+_type,
+title_prefix,
+title_highlight,
+phases[]{
+    _type,
+    order,
+    title,
+    description,
+    animation_speed,
+    container_bg,
+    dot_colors[]{
+        _type,
+        r,
+        g,
+        b,
+    }
+}
+`;
+
 export {
   home_hero_section,
   home_grid_section,
   project_hero_section,
+  home_approach_section,
   home_experience_section,
   home_featured_project_section,
 };

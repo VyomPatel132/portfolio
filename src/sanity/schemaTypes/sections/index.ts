@@ -1,3 +1,4 @@
+import { homeApproachSection } from "./home_approach_section";
 import { experienceSection } from "./home_experience_section";
 import { experienceItem } from "./home_experience_section/experience_item";
 import { featuredProject } from "./home_featured_project_section";
@@ -24,6 +25,7 @@ export const sectionType = [
   featuredProject,
   readBlogTogether,
   experienceSection,
+  homeApproachSection,
   titleDescriptionSideImage,
   imageTitleDescriptionArray,
 ];
