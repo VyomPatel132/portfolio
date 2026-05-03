@@ -81,16 +81,18 @@ type HomeExperienceSectionData = SanityBase & {
   experiences: ExperienceItem[];
 };
 
+type TechStack = {
+  name: string;
+  logo: string;
+}
+
 type FeaturedProject = {
   _type: string;
   project_title: string;
   project_description: string;
   image: string;
   live_link: string;
-  tech_stack: {
-    name: string;
-    logo: string;
-  }[];
+  tech_stack: TechStack[];
   category?: string;
   slug?: string;
 };

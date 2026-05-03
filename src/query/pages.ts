@@ -38,4 +38,26 @@ const projectPage = groq`*[_type == 'project_page'][0]{
   }
 }`;
 
-export { homePage, projectPage };
+const projectDetailPage = groq`*[_type == 'project_detail' && slug.current == $slug][0]{
+_type,
+category,
+project_title,
+project_description,
+"image": project_image.asset->url,
+live_link,
+source_code_url,
+about_project,
+tech_stack[] {
+  name,
+  "logo": logo.asset->url
+},
+project_status,
+role,
+key_features[],
+challenges_solutions[]{
+  challenge,
+  solution,
+},
+}`;
+
+export { homePage, projectPage, projectDetailPage };

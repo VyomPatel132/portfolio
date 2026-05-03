@@ -1,13 +1,17 @@
+'use client';
+
 import React from "react";
 import Link from "next/link";
 import { Intro } from "./intro";
-import { PROJECT_DETAIL } from "@/data";
 import { AboutProject } from "./about_project";
 import { KeyFeatures } from "./key_features";
 import { ChallengesSolution } from "./challenges_solutions";
 import { TechStack } from "./tech_stack";
 import { ProjectInfo } from "./project_info";
 import { ShareProject } from "./share_project";
+import { projectDetailPage } from "@/query";
+import { useSanityQuery } from "@/hooks";
+import { ProjectDetailPageData } from "@/types/pages";
 
 const featureColors = [
   "text-emerald-400",
@@ -20,8 +24,24 @@ const featureColors = [
   "text-pink-400",
 ];
 
-export const ProjectDetail = () => {
-  const { about, techStack, info, features, challenges } = PROJECT_DETAIL;
+export const ProjectDetail = ({ slug }: { slug: string }) => {
+  const { data, loading } = useSanityQuery<ProjectDetailPageData>(projectDetailPage, slug);
+
+  if (loading) {
+    return (
+      <main className="min-h-screen bg-[#000319] flex items-center justify-center">
+        <div className="text-white">Loading project details...</div>
+      </main>
+    );
+  }
+
+  if (!data) {
+    return (
+      <main className="min-h-screen bg-[#000319] flex items-center justify-center">
+        <div className="text-white">Project not found.</div>
+      </main>
+    );
+  }
 
   return (
     <main className="relative min-h-screen bg-[#000319] flex flex-col items-center justify-center overflow-hidden px-6 py-20 md:px-12">
@@ -43,21 +63,21 @@ export const ProjectDetail = () => {
           </Link>
         </div>
 
-        <Intro />
+        <Intro introData={data} />
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-10 mt-16 lg:mt-20">
           {/* Main Content */}
           <div className="space-y-14">
-            <AboutProject about={about} />
-            <KeyFeatures features={features} featureColors={featureColors} />
-            <ChallengesSolution challenges={challenges} />
+            <AboutProject about={data.about_project} />
+            <KeyFeatures features={data.key_features} featureColors={featureColors} />
+            <ChallengesSolution challenges={data.challenges_solutions} />
           </div>
 
           {/* Sidebar */}
           <aside className="lg:sticky lg:top-24 lg:self-start space-y-6">
-            <TechStack techStack={techStack} />
-            <ProjectInfo info={info} />
-            <ShareProject />
+            <TechStack techStack={data.tech_stack} />
+            <ProjectInfo info={data} />
+            {/* <ShareProject /> */}
           </aside>
         </div>
       </div>

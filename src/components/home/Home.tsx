@@ -19,7 +19,17 @@ export const Home = () => {
     return (
       <main className="relative bg-[#000319] flex justify-center items-center flex-col mx-auto sm:px-10 px-5">
         <div className="max-w-7xl w-full">
-          <HeroSectionSkeleton />
+          Loading...
+        </div>
+      </main>
+    );
+  }
+
+  if (!homeData) {
+    return (
+      <main className="relative bg-[#000319] flex justify-center items-center flex-col mx-auto sm:px-10 px-5">
+        <div className="max-w-7xl w-full">
+          Home data not found.
         </div>
       </main>
     );
