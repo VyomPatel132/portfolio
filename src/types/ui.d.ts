@@ -10,20 +10,18 @@ type TextGenerateEffectProps = {
   duration?: number;
 };
 
+type Variant = "gradient" | "primary" | "outline";
+
 type MagicButtonProps = {
   title: string;
   icon?: React.ReactNode;
   position?: string;
   handleClick?: () => void;
   otherClasses?: string;
+  variant?: Variant;
 };
 
 type FloatingNavProps = {
-  navItems: {
-    name: string;
-    link: string;
-    icon?: JSX.Element;
-  }[];
   className?: string;
 };
 
@@ -107,4 +105,39 @@ type PinContainerProps = {
   href?: string;
   className?: string;
   containerClassName?: string;
-}
+};
+
+type InfiniteMovingCardsProps = {
+  items: {
+    quote: string;
+    name: string;
+    title: string;
+  }[];
+  direction?: "left" | "right";
+  speed?: "fast" | "normal" | "slow";
+  pauseOnHover?: boolean;
+  className?: string;
+};
+
+type MovingBorderProps = {
+  children: React.ReactNode;
+  duration?: number;
+  rx?: string;
+  ry?: string;
+  [key: string]: any;
+};
+
+type ButtonVariant = "grid" | "list";
+
+type CardItemProps = {
+  as?: React.ElementType;
+  children: React.ReactNode;
+  className?: string;
+  translateX?: number | string;
+  translateY?: number | string;
+  translateZ?: number | string;
+  rotateX?: number | string;
+  rotateY?: number | string;
+  rotateZ?: number | string;
+  [key: string]: any;
+};

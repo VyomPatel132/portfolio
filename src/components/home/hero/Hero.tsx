@@ -1,10 +1,14 @@
 import React from "react";
 import { cn } from "@/utils/cn";
-import { MagicButton, Spotlight, TextGenerateEffect } from "@/components/ui";
+import {
+  MagicButton,
+  Spotlight,
+  TextGenerateEffect,
+} from "@/components/ui";
 import Link from "next/link";
 import { FaLocationArrow } from "react-icons/fa6";
 
-export const Hero = () => {
+export const Hero = ({ data }: { data: HomeHeroSectionData }) => {
   return (
     <div className="pb-20 pt-36">
       <div>
@@ -23,37 +27,43 @@ export const Hero = () => {
         <div
           className={cn(
             "absolute inset-0",
-            "[background-size:40px_40px]",
-            "[background-image:linear-gradient(to_right,rgba(228,228,231,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(228,228,231,0.03)_1px,transparent_1px)]",
-            "dark:[background-image:linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)]",
+            "bg-size-[40px_40px]",
+            "bg-[linear-gradient(to_right,rgba(228,228,231,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(228,228,231,0.03)_1px,transparent_1px)]",
+            "dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)]",
           )}
         />
 
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-[#000319]" />
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white mask-[radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-[#000319]" />
       </div>
 
       <div className="flex justify-center relative my-20 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <h2 className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-            Dynamic Web Magic with Next.js
+            {data.tag_line}
           </h2>
 
           <TextGenerateEffect
-            words="Transforming Concepts into Seamless User Experiences"
+            words={`${data.heading_white} ${data.heading_purple}`}
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi, I&apos;m Vyom Patel, a Next.js Developer based in India
+            {data.hero_description}
           </p>
 
-          <Link href="#about">
-            <MagicButton
-              title="Show my work"
-              icon={<FaLocationArrow />}
-              position="right"
-            />
-          </Link>
+          <div className="flex gap-6">
+            <Link href={data.my_work_button.link || "#about"}>
+              <MagicButton
+                title={data.my_work_button.label}
+                icon={<FaLocationArrow />}
+                position="right"
+                variant="primary"
+              />
+            </Link>
+            <Link href={data.get_in_touch_button.link || "#contact"}>
+              <MagicButton title={data.get_in_touch_button.label} />
+            </Link>
+          </div>
         </div>
       </div>
     </div>
