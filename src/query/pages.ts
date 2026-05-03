@@ -1,5 +1,5 @@
 import { groq } from "next-sanity";
-import { home_approach_section, home_experience_section, home_featured_project_section, home_grid_section, home_hero_section, project_hero_section, project_listing_section } from "./sections";
+import { about_experinced_tech_section, about_hero_section, home_approach_section, home_experience_section, home_featured_project_section, home_grid_section, home_hero_section, project_hero_section, project_listing_section } from "./sections";
 
 const homePage = groq`*[_type == 'home'][0]{
   _type,
@@ -60,4 +60,18 @@ challenges_solutions[]{
 },
 }`;
 
-export { homePage, projectPage, projectDetailPage };
+const aboutPage = groq`*[_type == 'about_page'][0]{
+_type,
+title,
+"slug": slug.current,
+"sections": section[]{
+  (_type == "about_hero_section") => {
+    ${about_hero_section}
+  },
+  (_type == "about_experinced_tech_section") => {
+    ${about_experinced_tech_section}
+  }
+}
+}`;
+
+export { homePage, projectPage, projectDetailPage, aboutPage };

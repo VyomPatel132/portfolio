@@ -1,35 +1,43 @@
-import { Hero, Philosophy, TechStack } from "@/components/about";
-import Image from "next/image";
-import React from "react";
+"use client";
 
-const mockAboutData = {
-  name: "Vyom Patel",
-  title: "Frontend & Full-Stack Developer",
-  profileImage: "/image_4f1003.jpg",
-  bio: "With over 2.8 years of professional experience, I specialize in building scalable, high-performance web applications using the MERN stack and Next.js. I bridge the gap between complex design and functional, high-performance code.",
-  skills: [
-    "Next.js 15",
-    "React.js",
-    "TypeScript",
-    "Node.js",
-    "MongoDB",
-    "Tailwind CSS",
-    "Sanity.io",
-    "Figma to Code",
-  ],
-  stats: [
-    { label: "Years Experience", value: "2.8+" },
-    { label: "Projects Completed", value: "15+" },
-    { label: "Design Tools", value: "Figma/XD" },
-  ],
-};
+import React from "react";
+import { Hero, Philosophy, TechStack } from "@/components/about";
+import { useSanityQuery } from "@/hooks";
+import { aboutPage } from "@/query";
+import { AboutHeroSections, AboutPageData } from "@/types/pages";
 
 export const AboutContainer = () => {
+  const { data: aboutData, loading } = useSanityQuery<AboutPageData>(aboutPage);
+
+  if (loading) {
+    return (
+      <main className="relative bg-[#000319] flex justify-center items-center flex-col mx-auto sm:px-10 px-5">
+        <div className="max-w-7xl w-full">Loading About Page...</div>
+      </main>
+    );
+  }
+
+  if (!aboutData) {
+    return (
+      <main className="relative bg-[#000319] flex justify-center items-center flex-col mx-auto sm:px-10 px-5">
+        <div className="max-w-7xl w-full">About data not found.</div>
+      </main>
+    );
+  }
+
   return (
     <main className="relative bg-[#000319] flex justify-center items-center flex-col mx-auto sm:px-10 px-5 overflow-clip">
       <div className="max-w-7xl w-full">
-        <Hero data={mockAboutData} />
-        <TechStack data={mockAboutData} />
+        {aboutData?.sections.map((section: AboutHeroSections, index) => {
+          switch (section._type) {
+            case "about_hero_section":
+              return <Hero key={index} data={section} />;
+            case "about_experinced_tech_section":
+              return <TechStack key={index} data={section} />;
+            default:
+              return null;
+          }
+        })}
         <Philosophy />
       </div>
 

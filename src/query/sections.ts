@@ -111,12 +111,41 @@ project_listing[]->{
 }
 `;
 
+const about_hero_section = `
+_type,
+badge,
+name,
+description,
+profile_image{
+    _type,
+    alt,
+    "image": image.asset->url
+},
+stats[]{
+    _type,
+    value,
+    label
+}
+`;
+
+const about_experinced_tech_section = `
+_type,
+title_prefix,
+title_highlight,
+tech_stack[] {
+    name,
+    "logo": logo.asset->url
+},
+`;
+
 export {
   home_hero_section,
   home_grid_section,
+  about_hero_section,
   project_hero_section,
   home_approach_section,
   home_experience_section,
   project_listing_section,
   home_featured_project_section,
+  about_experinced_tech_section,
 };

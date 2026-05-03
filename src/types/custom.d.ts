@@ -133,3 +133,31 @@ type ProjectListingSectionData = SanityBase & {
   search_placeholder: string;
   project_listing: FeaturedProject[];
 };
+
+type ProfileImage = {
+  _type: string;
+  alt: string;
+  image: string;
+};
+
+type Stat = {
+  _type: string;
+  value: string;
+  label: string;
+}
+
+type AboutHeroSectionData = SanityBase & {
+  _type: "about_hero_section";
+  badge: string;
+  name: string;
+  description: string;
+  profile_image: ProfileImage;
+  stats: Stat[];
+};
+
+type AboutExperincedTechSectionData = SanityBase & {
+  _type: "about_experinced_tech_section";
+  title_prefix: string;
+  title_highlight: string;
+  tech_stack: TechStack[];
+}

@@ -49,6 +49,7 @@ export const aboutPage = defineType({
       type: "array",
       of: [
         { type: "about_hero_section" },
+        { type: "about_experinced_tech_section" },
       ],
       group: "main",
     }),

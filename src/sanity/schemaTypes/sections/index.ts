@@ -1,3 +1,4 @@
+import { experiencedTechSection } from "./about_experinced_tech_section";
 import { aboutHero } from "./about_hero_section";
 import { homeApproachSection } from "./home_approach_section";
 import { experienceSection } from "./home_experience_section";
@@ -30,6 +31,7 @@ export const sectionType = [
   readBlogTogether,
   experienceSection,
   homeApproachSection,
+  experiencedTechSection,
   titleDescriptionSideImage,
   imageTitleDescriptionArray,
 ];

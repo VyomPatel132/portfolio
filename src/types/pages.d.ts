@@ -5,6 +5,7 @@ type HomeSections =
   | HomeFeaturedProjectSectionData
   | HomeApproachSectionData;
 type ProjectSections = ProjectHeroSectionData | ProjectListingSectionData;
+type AboutHeroSections = AboutHeroSectionData | AboutExperincedTechSectionData;
 
 export type HomePageData = {
   _type: string;
@@ -37,4 +38,11 @@ export type ProjectDetailPageData = {
     challenge: string;
     solution: string;
   }[];
+}
+
+export type AboutPageData = {
+  _type: string;
+  title: string;
+  slug: string;
+  sections: AboutHeroSections[];
 }
