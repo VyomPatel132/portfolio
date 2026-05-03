@@ -4,7 +4,7 @@ type HomeSections =
   | HomeExperienceSectionData
   | HomeFeaturedProjectSectionData
   | HomeApproachSectionData;
-type ProjectSections = ProjectHeroSectionData;
+type ProjectSections = ProjectHeroSectionData | ProjectListingSectionData;
 
 export type HomePageData = {
   _type: string;

@@ -10,6 +10,7 @@ import { titleBlog } from "./image_title_description_array_section/title_blog";
 import { moreConversion } from "./more_conversation_section";
 import { projectAbout } from "./project_about_section";
 import { projectHero } from "./project_hero_section";
+import { projectListing } from "./project_listing_section";
 import { readBlogTogether } from "./read_blog_together";
 import { titleDescriptionSideImage } from "./title_description_side_image_Section";
 
@@ -22,6 +23,7 @@ export const sectionType = [
   projectAbout,
   moreConversion,
   experienceItem,
+  projectListing,
   featuredProject,
   readBlogTogether,
   experienceSection,

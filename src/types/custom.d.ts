@@ -91,6 +91,8 @@ type FeaturedProject = {
     name: string;
     logo: string;
   }[];
+  category?: string;
+  slug?: string;
 };
 
 type HomeFeaturedProjectSectionData = SanityBase & {
@@ -122,4 +124,10 @@ type HomeApproachSectionData = SanityBase & {
   title_prefix: string;
   title_highlight: string;
   phases: Phases[];
+};
+
+type ProjectListingSectionData = SanityBase & {
+  _type: "project_listing_section";
+  search_placeholder: string;
+  project_listing: FeaturedProject[];
 };

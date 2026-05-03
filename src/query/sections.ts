@@ -93,11 +93,30 @@ phases[]{
 }
 `;
 
+const project_listing_section = `
+_type,
+search_placeholder,
+project_listing[]->{
+    _type,
+    "slug": slug.current,
+    project_title,
+    project_description,
+    "image": project_image.asset->url,
+    live_link,
+    tech_stack[] {
+      name,
+      "logo": logo.asset->url
+    },
+    category
+}
+`;
+
 export {
   home_hero_section,
   home_grid_section,
   project_hero_section,
   home_approach_section,
   home_experience_section,
+  project_listing_section,
   home_featured_project_section,
 };

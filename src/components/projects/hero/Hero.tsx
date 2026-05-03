@@ -12,7 +12,7 @@ export const Hero: React.FC<HeroProps> = (props) => {
   const { projectCount = 0, categoryCount = 0, data } = props;
 
   return (
-    <div className="pb-20 pt-36">
+    <div className="pt-36">
       <div>
         <Spotlight
           className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
@@ -55,13 +55,6 @@ export const Hero: React.FC<HeroProps> = (props) => {
             words="Explore my collection of web applications, tools, and creative solutions built with modern technologies"
             className="text-center text-[24px]"
           />
-
-          <div className="flex items-center justify-center gap-3 mt-6 text-sm text-zinc-500">
-            <span className="text-cyan-400">•</span>
-            <span>{projectCount} Projects</span>
-            <span className="text-purple-400">•</span>
-            <span>{categoryCount} Categories</span>
-          </div>
         </div>
       </div>
     </div>
