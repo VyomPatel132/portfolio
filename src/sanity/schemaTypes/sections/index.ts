@@ -1,3 +1,4 @@
+import { aboutHero } from "./about_hero_section";
 import { homeApproachSection } from "./home_approach_section";
 import { experienceSection } from "./home_experience_section";
 import { experienceItem } from "./home_experience_section/experience_item";
@@ -18,6 +19,7 @@ export const sectionType = [
   homeHero,
   titleBlog,
   gridItems,
+  aboutHero,
   gridSection,
   projectHero,
   projectAbout,

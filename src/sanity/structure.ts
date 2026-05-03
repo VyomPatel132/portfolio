@@ -1,6 +1,6 @@
 import type { StructureResolver } from "sanity/structure";
 import { AiOutlineGlobal } from "react-icons/ai";
-import { HiOutlineTerminal } from "react-icons/hi";
+import { HiOutlineTerminal, HiOutlineUser } from "react-icons/hi";
 import { RiPagesLine } from "react-icons/ri";
 import { MdOutlineCases, MdOutlineFolderSpecial } from "react-icons/md";
 import { FaHome } from "react-icons/fa";
@@ -37,6 +37,9 @@ export const structure: StructureResolver = (S) =>
               S.documentTypeListItem("project_page")
                 .title("Project Page")
                 .icon(MdOutlineCases),
+              S.documentTypeListItem("about_page")
+                .title("About Page")
+                .icon(HiOutlineUser),
             ]),
         ),
       S.listItem()
