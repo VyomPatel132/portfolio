@@ -8,7 +8,7 @@ interface HeroProps {
   data: ProjectHeroSectionData;
 }
 
-export const Hero: React.FC<HeroProps> = (props) => {
+export const ProjectHero: React.FC<HeroProps> = (props) => {
   const { projectCount = 0, categoryCount = 0, data } = props;
 
   return (
