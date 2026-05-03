@@ -1,4 +1,4 @@
-export function OverlayCard() {
+export function OverlayCard({ image }: { image: string }) {
   return (
     <div className="relative group w-full max-w-5xl mx-auto">
       <div className="absolute -inset-1 bg-linear-to-r from-purple-300 to-cyan-100 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-700"></div>
@@ -14,7 +14,7 @@ export function OverlayCard() {
 
         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
           <img
-            src="https://images.unsplash.com/photo-1476842634003-7dcca8f832de?auto=format&fit=crop&w=1650&q=80"
+            src={image}
             alt="background"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />

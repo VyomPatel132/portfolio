@@ -30,3 +30,134 @@ type HomeHeroSectionData = SanityBase & {
   get_in_touch_button: ButtonPropsData;
   my_work_button: ButtonPropsData;
 };
+
+type GridItemVariant =
+  | "feature"
+  | "tech_stack"
+  | "globe"
+  | "email_cta"
+  | "inside_scoop"
+  | "grid_feature";
+
+type GridItem = {
+  _type: string;
+  title: string;
+  description?: string;
+  variant?: GridItemVariant;
+  tech_list?: string[];
+  img?: string;
+  spareImg?: string;
+  className?: string;
+  imgClassName?: string;
+  titleClassName?: string;
+};
+
+type HomeGridSectionData = SanityBase & {
+  _type: "home_grid_section";
+  title: string;
+  grid_items: GridItem[];
+};
+
+type ProjectHeroSectionData = SanityBase & {
+  _type: "project_hero_section";
+  badge: string;
+  description: string;
+  title_highlight: string;
+  title_prefix: string;
+};
+
+type ExperienceItem = {
+  _type: string;
+  title: string;
+  description: string;
+  icon: string;
+  className?: string;
+};
+
+type HomeExperienceSectionData = SanityBase & {
+  _type: "home_experience_section";
+  title_prefix: string;
+  title_highlight: string;
+  experiences: ExperienceItem[];
+};
+
+type TechStack = {
+  name: string;
+  logo: string;
+}
+
+type FeaturedProject = {
+  _type: string;
+  project_title: string;
+  project_description: string;
+  image: string;
+  live_link: string;
+  tech_stack: TechStack[];
+  category?: string;
+  slug?: string;
+};
+
+type HomeFeaturedProjectSectionData = SanityBase & {
+  _type: "home_featured_project_section";
+  title_prefix: string;
+  title_highlight: string;
+  featured_projects: FeaturedProject[];
+};
+
+type DotColors = {
+  _type: string;
+  r: number;
+  g: number;
+  b: number;
+};
+
+type Phases = {
+  _type: string;
+  order: string;
+  title: string;
+  description: string;
+  animation_speed: number;
+  container_bg: string;
+  dot_colors: DotColors[];
+};
+
+type HomeApproachSectionData = SanityBase & {
+  _type: "home_approach_section";
+  title_prefix: string;
+  title_highlight: string;
+  phases: Phases[];
+};
+
+type ProjectListingSectionData = SanityBase & {
+  _type: "project_listing_section";
+  search_placeholder: string;
+  project_listing: FeaturedProject[];
+};
+
+type ProfileImage = {
+  _type: string;
+  alt: string;
+  image: string;
+};
+
+type Stat = {
+  _type: string;
+  value: string;
+  label: string;
+}
+
+type AboutHeroSectionData = SanityBase & {
+  _type: "about_hero_section";
+  badge: string;
+  name: string;
+  description: string;
+  profile_image: ProfileImage;
+  stats: Stat[];
+};
+
+type AboutExperincedTechSectionData = SanityBase & {
+  _type: "about_experinced_tech_section";
+  title_prefix: string;
+  title_highlight: string;
+  tech_stack: TechStack[];
+}

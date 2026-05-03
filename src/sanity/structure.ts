@@ -1,8 +1,8 @@
 import type { StructureResolver } from "sanity/structure";
 import { AiOutlineGlobal } from "react-icons/ai";
-import { HiOutlineTerminal } from "react-icons/hi";
+import { HiOutlineTerminal, HiOutlineUser } from "react-icons/hi";
 import { RiPagesLine } from "react-icons/ri";
-import { MdOutlineCases } from "react-icons/md";
+import { MdOutlineCases, MdOutlineFolderSpecial } from "react-icons/md";
 import { FaHome } from "react-icons/fa";
 
 // https://www.sanity.io/docs/structure-builder-cheat-sheet
@@ -33,10 +33,17 @@ export const structure: StructureResolver = (S) =>
           S.list()
             .title("Site Pages")
             .items([
-              S.documentTypeListItem("home")
-                .title("Home Page")
-                .icon(FaHome),
-              S.documentTypeListItem("project_page").title("Project Page").icon(MdOutlineCases),
+              S.documentTypeListItem("home").title("Home Page").icon(FaHome),
+              S.documentTypeListItem("project_page")
+                .title("Project Page")
+                .icon(MdOutlineCases),
+              S.documentTypeListItem("about_page")
+                .title("About Page")
+                .icon(HiOutlineUser),
             ]),
         ),
+      S.listItem()
+        .title("Project Document")
+        .icon(MdOutlineFolderSpecial)
+        .child(S.documentTypeList("project_detail").title("Project Details")),
     ]);

@@ -1,52 +1,56 @@
+'use client';
+
 import { MagicButton, PinContainer } from "@/components/ui";
-import { projects } from "@/data";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { FaLocationArrow } from "react-icons/fa6";
 
-export const RecentProjects = () => {
+export const RecentProjects = ({ data }: { data: HomeFeaturedProjectSectionData }) => {
+  const router = useRouter();
+
   return (
     <div className="py-20" id="projects">
       <h1 className="heading">
-        A small selection of{" "}
-        <span className="text-purple-300">recent projects</span>
+        {data.title_prefix}{" "}
+        <span className="text-purple-300">{data.title_highlight}</span>
       </h1>
       <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
-        {projects.map((project) => (
+        {data.featured_projects.map((project, index) => (
           <div
-            key={project.id}
+            key={index}
             className="sm:h-164 lg:min-h-130 h-128 flex items-center justify-center sm:w-142.5 w-[80vw]"
           >
-            <PinContainer href={project.link} title={project.link}>
+            <PinContainer href={project.live_link} title={project.project_title}>
               <div className="relative flex items-center justify-center sm:w-142.5 w-[80vw] overflow-hidden sm:h-[40vh] h-[30vh] mb-10">
                 <div className="relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#13162d]">
                   <Image src="/bg.png" alt="bg-img" width={500} height={500} />
                 </div>
                 <Image
-                  src={project.img}
-                  alt={project.title}
+                  src={project.image}
+                  alt={project.project_title}
                   width={500}
                   height={500}
                   className="z-10 absolute bottom-0"
                 />
               </div>
               <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
-                {project.title}
+                {project.project_title}
               </h1>
               <p className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2">
-                {project.des}
+                {project.project_description}
               </p>
               <div className="flex items-center justify-between mt-7 mb-3">
                 <div className="flex items-center">
-                  {project.iconLists.map((icon, index) => (
+                  {project.tech_stack.map((tech, index) => (
                     <div
-                      key={icon}
-                      className="border border-white/20 rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                      key={tech.name}
+                      className="border border-white/20 rounded-full bg-white lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
                       style={{ transform: `translateX(-${5 * index * 2}px)` }}
                     >
                       <Image
-                        src={icon}
-                        alt={icon}
+                        src={tech.logo}
+                        alt={tech.name}
                         width={50}
                         height={50}
                         className="p-2"
@@ -68,6 +72,7 @@ export const RecentProjects = () => {
           title="View All Projects"
           icon={<FaLocationArrow />}
           position="right"
+          handleClick={() => router.push("/projects")}
         />
       </div>
     </div>

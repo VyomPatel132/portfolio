@@ -47,7 +47,7 @@ export const project = defineType({
       name: "section",
       title: "Section",
       type: "array",
-      of: [{ type: "project_hero_section" }, { type: "project_about_section" }],
+      of: [{ type: "project_hero_section" }, { type: "project_listing_section" }],
       group: "main",
     }),
     defineField({

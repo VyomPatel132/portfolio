@@ -1,7 +1,7 @@
 import React from "react";
 import { IoRocket } from "react-icons/io5";
 
-export const TechStack = ({ techStack }: { techStack: string[] }) => {
+export const TechStack = ({ techStack }: { techStack: TechStack[] }) => {
   return (
     <div className="rounded-xl border border-white/8 bg-white/2 backdrop-blur-md p-6">
       <div className="flex items-center gap-2 mb-4">
@@ -11,10 +11,10 @@ export const TechStack = ({ techStack }: { techStack: string[] }) => {
       <div className="flex flex-wrap gap-2">
         {techStack.map((tech) => (
           <span
-            key={tech}
+            key={tech.name}
             className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-gray-300"
           >
-            {tech}
+            {tech.name}
           </span>
         ))}
       </div>

@@ -26,21 +26,21 @@ const BentoGrid: React.FC<BentoGridProps> = ({ className, children }) => {
   );
 };
 
-const BentoGridItem: React.FC<BentoGridItemProps> = ({
-  id,
+const BentoGridItem: React.FC<GridItem> = ({
   img,
   title,
+  variant,
   spareImg,
   className,
+  tech_list,
   description,
   imgClassName,
   titleClassName,
 }) => {
-  const leftLists = ["ReactJS", "Express", "Typescript"];
-  const rightLists = ["NextJS", "NodeJS", "GraphQL"];
+  const leftLists = tech_list?.slice(0, 3) || [];
+  const rightLists = tech_list?.slice(3, 6) || [];
 
   const [copied, setCopied] = useState(false);
-
   const defaultOptions = {
     loop: copied,
     autoplay: copied,
@@ -72,7 +72,7 @@ const BentoGridItem: React.FC<BentoGridItemProps> = ({
           "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
       }}
     >
-      <div className={`${id === 6 && "flex justify-center"} h-full`}>
+      <div className={`${variant === 'email_cta' && "flex justify-center"} h-full`}>
         <div className="w-full h-full absolute">
           {img && (
             <Image
@@ -87,7 +87,7 @@ const BentoGridItem: React.FC<BentoGridItemProps> = ({
         <div
           className={cn(
             "absolute right-0 -bottom-5",
-            id === 5 && "w-full opacity-80",
+            variant === 'inside_scoop' && "w-full opacity-80",
           )}
         >
           {spareImg && (
@@ -101,7 +101,7 @@ const BentoGridItem: React.FC<BentoGridItemProps> = ({
           )}
         </div>
 
-        {id === 6 && (
+        {variant === 'email_cta' && (
           <BackgroundGradientAnimation>
             <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl" />
           </BackgroundGradientAnimation>
@@ -123,9 +123,9 @@ const BentoGridItem: React.FC<BentoGridItemProps> = ({
             {title}
           </div>
 
-          {id === 2 && <GridGlobe />}
+          {variant === 'globe' && <GridGlobe />}
 
-          {id === 3 && (
+          {variant === 'tech_stack' && (
             <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
               <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
                 {leftLists.map((item, i) => (
@@ -152,7 +152,7 @@ const BentoGridItem: React.FC<BentoGridItemProps> = ({
             </div>
           )}
 
-          {id === 6 && (
+          {variant === 'email_cta' && (
             <div className="mt-5 relative">
               <div
                 className={`absolute -bottom-5 right-0 ${
