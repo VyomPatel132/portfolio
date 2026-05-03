@@ -4,13 +4,11 @@ import React from "react";
 import { Hero } from "./hero";
 import { Grid } from "../custom";
 import { RecentProjects } from "./recent_projects";
-import { Testimonial } from "./testimonial";
 import { Experiences } from "./experiences";
 import { Approach } from "./approach";
 import { useSanityQuery } from "@/hooks";
 import { homePage } from "@/query";
 import { HomePageData, HomeSections } from "@/types/pages";
-import { HeroSectionSkeleton } from "../common";
 
 export const Home = () => {
   const { data: homeData, loading } = useSanityQuery<HomePageData>(homePage);
@@ -54,10 +52,6 @@ export const Home = () => {
               return null;
           }
         })}
-        {/* <RecentProjects /> */}
-        {/* <Testimonial /> */}
-        {/* <Experiences /> */}
-        {/* <Approach /> */}
       </div>
     </main>
   );
