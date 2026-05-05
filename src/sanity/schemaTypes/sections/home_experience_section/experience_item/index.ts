@@ -19,7 +19,7 @@ export const experienceItem = defineType({
     defineField({
       name: "icon",
       title: "Icon/Illustration",
-      type: "image",
+      type: "custom_image",
       options: { hotspot: true },
     }),
     defineField({
@@ -28,4 +28,10 @@ export const experienceItem = defineType({
       type: "string",
     }),
   ],
+  preview: {
+    select: {
+      title: "title",
+      media: "icon.image.asset",
+    },
+  }
 });

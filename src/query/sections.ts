@@ -26,8 +26,16 @@ grid_items[]{
     title,
     description,
     variant,
-    "img": image.asset->url,
-    "spareImg": spare_image.asset->url,
+    image{
+        _type,
+        alt,
+        "img": image.asset->url,
+    },
+    spare_image{
+        _type,
+        alt,
+        "spareImg": image.asset->url,
+    },
     className,
     imgClassName,
     titleClassName,
@@ -43,7 +51,11 @@ experiences[]{
     _type,
     title,
     description,
-    "icon": icon.asset->url,
+    icon{
+        _type,
+        alt,
+        "icon": image.asset->url,
+    },
     className
 }
 `;
@@ -64,11 +76,20 @@ featured_projects[]->{
     _type,
     project_title,
     project_description,
-    "image": project_image.asset->url,
-    live_link,
+    project_image{
+        _type,
+        alt,
+        "image": image.asset->url,
+        link,
+    },
     tech_stack[] {
+      _type,
       name,
-      "logo": logo.asset->url
+      logo{
+        _type,
+        alt,
+        "logo": image.asset->url
+      },
     }
 }
 `;
@@ -101,11 +122,20 @@ project_listing[]->{
     "slug": slug.current,
     project_title,
     project_description,
-    "image": project_image.asset->url,
-    live_link,
+    project_image{
+        _type,
+        alt,
+        "image": image.asset->url,
+        link,
+    },
     tech_stack[] {
-      name,
-      "logo": logo.asset->url
+        _type,
+        name,
+        logo{
+            _type,
+            alt,
+            "logo": image.asset->url
+        },
     },
     category
 }
@@ -133,8 +163,13 @@ _type,
 title_prefix,
 title_highlight,
 tech_stack[] {
+    _type,
     name,
-    "logo": logo.asset->url
+    logo{
+        _type,
+        alt,
+        "logo": image.asset->url,
+    },
 },
 `;
 

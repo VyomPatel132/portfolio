@@ -45,8 +45,16 @@ type GridItem = {
   description?: string;
   variant?: GridItemVariant;
   tech_list?: string[];
-  img?: string;
-  spareImg?: string;
+  image?: {
+    _type: string;
+    alt: string;
+    "img": string;
+  };
+  spare_image?: {
+    _type: string;
+    alt: string;
+    "spareImg": string;
+  };
   className?: string;
   imgClassName?: string;
   titleClassName?: string;
@@ -70,7 +78,11 @@ type ExperienceItem = {
   _type: string;
   title: string;
   description: string;
-  icon: string;
+  icon: {
+    _type: string;
+    alt: string;
+    "icon": string;
+  };
   className?: string;
 };
 
@@ -83,15 +95,23 @@ type HomeExperienceSectionData = SanityBase & {
 
 type TechStack = {
   name: string;
-  logo: string;
+  logo: {
+    _type: string;
+    alt: string;
+    "logo": string;
+  };
 }
 
 type FeaturedProject = {
   _type: string;
   project_title: string;
   project_description: string;
-  image: string;
-  live_link: string;
+  project_image: {
+    _type: string;
+    alt: string;
+    image: string;
+    link?: string;
+  };
   tech_stack: TechStack[];
   category?: string;
   slug?: string;

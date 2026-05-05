@@ -21,14 +21,14 @@ export const RecentProjects = ({ data }: { data: HomeFeaturedProjectSectionData 
             key={index}
             className="sm:h-164 lg:min-h-130 h-128 flex items-center justify-center sm:w-142.5 w-[80vw]"
           >
-            <PinContainer href={project.live_link} title={project.project_title}>
+            <PinContainer href={project.project_image.link} title={project.project_title}>
               <div className="relative flex items-center justify-center sm:w-142.5 w-[80vw] overflow-hidden sm:h-[40vh] h-[30vh] mb-10">
                 <div className="relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#13162d]">
-                  <Image src="/bg.png" alt="bg-img" width={500} height={500} />
+                  <Image src="/bg.png" alt="background" width={1920} height={1080} />
                 </div>
                 <Image
-                  src={project.image}
-                  alt={project.project_title}
+                  src={project.project_image.image}
+                  alt={project.project_image.alt || project.project_title}
                   width={500}
                   height={500}
                   className="z-10 absolute bottom-0"
@@ -49,8 +49,8 @@ export const RecentProjects = ({ data }: { data: HomeFeaturedProjectSectionData 
                       style={{ transform: `translateX(-${5 * index * 2}px)` }}
                     >
                       <Image
-                        src={tech.logo}
-                        alt={tech.name}
+                        src={tech.logo.logo}
+                        alt={tech.logo.alt || tech.name}
                         width={50}
                         height={50}
                         className="p-2"

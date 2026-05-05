@@ -1,8 +1,6 @@
 import Image from "next/image";
-import React from "react";
 
 export const Hero = ({ data }: { data: AboutHeroSectionData }) => {
-
   return (
     <section className="flex flex-col lg:flex-row gap-12 items-center pb-20 pt-36">
       <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-3xl overflow-hidden border-2 border-purple-500/30 shadow-[0_0_20px_rgba(168,85,247,0.2)]">

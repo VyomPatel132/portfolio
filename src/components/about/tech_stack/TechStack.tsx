@@ -17,7 +17,7 @@ export const TechStack = ({
       </h2>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {data.tech_stack.map((tech: any, i: number) => (
+        {data.tech_stack.map((tech, i) => (
           <Button
             key={i}
             borderRadius="1rem"
@@ -28,8 +28,8 @@ export const TechStack = ({
               <div className="shrink-0 w-12 h-12 rounded-full bg-white flex justify-center items-center shadow-[0_0_15px_rgba(255,255,255,0.1)]">
                 {tech.logo && (
                   <Image
-                    src={tech.logo}
-                    alt={tech.name || "tech icon"}
+                    src={tech.logo.logo}
+                    alt={tech.logo.alt || "tech icon"}
                     width={28}
                     height={28}
                     className="object-contain"

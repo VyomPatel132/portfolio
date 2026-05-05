@@ -9,7 +9,7 @@ import { IoCopyOutline } from "react-icons/io5";
 import dynamic from "next/dynamic";
 import { BackgroundGradientAnimation } from "../BackgroundGradientAnimation";
 import { GridGlobe } from "@/components/custom";
-const Lottie = dynamic(() => import("react-lottie"), {
+const Lottie = dynamic(() => import("lottie-react"), {
   ssr: false,
 });
 
@@ -27,10 +27,10 @@ const BentoGrid: React.FC<BentoGridProps> = ({ className, children }) => {
 };
 
 const BentoGridItem: React.FC<GridItem> = ({
-  img,
+  image,
   title,
   variant,
-  spareImg,
+  spare_image,
   className,
   tech_list,
   description,
@@ -74,10 +74,10 @@ const BentoGridItem: React.FC<GridItem> = ({
     >
       <div className={`${variant === 'email_cta' && "flex justify-center"} h-full`}>
         <div className="w-full h-full absolute">
-          {img && (
+          {image && (
             <Image
-              src={img}
-              alt={img}
+              src={image.img}
+              alt={image.alt}
               width={500}
               height={500}
               className={cn(imgClassName, "object-cover object-center ")}
@@ -90,10 +90,10 @@ const BentoGridItem: React.FC<GridItem> = ({
             variant === 'inside_scoop' && "w-full opacity-80",
           )}
         >
-          {spareImg && (
+          {spare_image && (
             <Image
-              src={spareImg}
-              alt={spareImg}
+              src={spare_image.spareImg}
+              alt={spare_image.alt}
               width={220}
               height={220}
               className="object-cover object-center w-full h-full"
@@ -159,7 +159,7 @@ const BentoGridItem: React.FC<GridItem> = ({
                   copied ? "block" : "block"
                 }`}
               >
-                <Lottie options={defaultOptions} height={200} width={400} />
+                <Lottie loop={copied} autoPlay={copied} animationData={animationData} style={{ height: 200, width: 400 }} />
               </div>
 
               <MagicButton

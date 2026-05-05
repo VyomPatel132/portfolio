@@ -46,14 +46,9 @@ export const footer = defineType({
               },
             }),
             defineField({
-              name: "url",
-              title: "URL",
-              type: "url",
-            }),
-            defineField({
               name: "icon",
               title: "Icon",
-              type: "image",
+              type: "custom_image",
             })
           ],
           preview: {

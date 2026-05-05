@@ -19,8 +19,8 @@ export const Experiences = ({ data }: { data: HomeExperienceSectionData }) => {
           >
             <div className="flex lg:flex-row flex-col lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2">
               <Image
-                src={experience.icon}
-                alt={experience.title}
+                src={experience.icon.icon}
+                alt={experience.icon.alt}
                 width={200}
                 height={200}
                 className="lg:w-32 md:w-20 w-16"

@@ -1,6 +1,4 @@
-import React from "react";
 import { MagicButton } from "@/components/ui";
-import { socialMedia } from "@/data";
 import Image from "next/image";
 import Link from "next/link";
 import { FaLocationArrow } from "react-icons/fa6";
@@ -58,11 +56,11 @@ export const Footer = () => {
             <Link
               key={index}
               className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-150 bg-opacity-75 bg-[#000319] rounded-lg border border-[#ffffff20]"
-              href={profile.url}
+              href={profile.icon.link}
             >
               <Image
-                src={urlFor(profile.icon).url()}
-                alt={profile.platform}
+                src={urlFor(profile.icon.imageUrl).url()}
+                alt={profile.icon.alt}
                 width={20}
                 height={20}
               />

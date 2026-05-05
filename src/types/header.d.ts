@@ -13,8 +13,12 @@ export interface HeaderData {
 export interface SocialLink {
   _type: string;
   platform: string;
-  url: string;
-  icon: any;
+  icon: {
+    _type: string;
+    alt: string;
+    link: string;
+    imageUrl: string;
+  }
 }
 
 export interface FooterData {
