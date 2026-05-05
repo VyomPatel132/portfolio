@@ -146,7 +146,11 @@ title_prefix,
 title_highlight,
 tech_stack[] {
     name,
-    "logo": logo.asset->url
+    logo{
+        _type,
+        alt,
+        "logo": image.asset->url,
+    },
 },
 `;
 

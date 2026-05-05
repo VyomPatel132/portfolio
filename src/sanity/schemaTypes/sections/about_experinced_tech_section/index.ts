@@ -32,7 +32,7 @@ export const experiencedTechSection = defineType({
             defineField({
               name: "logo",
               title: "Logo",
-              type: "image",
+              type: "custom_image",
               options: {
                 hotspot: true,
               },
@@ -41,7 +41,7 @@ export const experiencedTechSection = defineType({
           preview: {
             select: {
               title: "name",
-              media: "logo",
+              media: "logo.image.asset",
             },
           },
         },

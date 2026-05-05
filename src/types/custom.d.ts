@@ -95,7 +95,11 @@ type HomeExperienceSectionData = SanityBase & {
 
 type TechStack = {
   name: string;
-  logo: string;
+  logo: {
+    _type: string;
+    alt: string;
+    "logo": string;
+  };
 }
 
 type FeaturedProject = {

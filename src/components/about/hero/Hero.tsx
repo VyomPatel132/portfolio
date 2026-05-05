@@ -7,7 +7,9 @@ export const Hero = ({ data }: { data: AboutHeroSectionData }) => {
         <Image
           src={data.profile_image.image}
           alt={data.profile_image.alt}
+          fill
           className="object-cover"
+          priority
         />
       </div>
 
