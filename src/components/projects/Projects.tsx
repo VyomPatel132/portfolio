@@ -3,7 +3,7 @@
 import { Fragment } from "react";
 import { useSanityQuery } from "@/hooks";
 import { FilterTab } from "./filter_tab";
-import { Hero } from "./hero";
+import { ProjectHero } from "./hero";
 import { ProjectsListing } from "./projects_listing";
 import { ProjectsPageData } from "@/types/pages";
 import { projectPage } from "@/query";
@@ -26,7 +26,7 @@ export const Projects = () => {
         {projectsData?.sections.map((section, index) => {
           switch (section._type) {
             case "project_hero_section":
-              return <Hero key={index} data={section} />;
+              return <ProjectHero key={index} data={section} />;
             case "project_listing_section":
               return (
                 <Fragment key={index}>
