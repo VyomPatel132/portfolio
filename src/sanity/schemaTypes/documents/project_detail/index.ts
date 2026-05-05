@@ -40,15 +40,10 @@ export const projectDetail = defineType({
     defineField({
       name: "project_image",
       title: "Project Preview Image",
-      type: "image",
+      type: "custom_image",
       options: {
         hotspot: true,
       },
-    }),
-    defineField({
-      name: "live_link",
-      title: "Live Url",
-      type: "url",
     }),
     defineField({
       name: "source_code_url",
@@ -78,7 +73,7 @@ export const projectDetail = defineType({
             defineField({
               name: "logo",
               title: "Logo",
-              type: "image",
+              type: "custom_image",
               options: {
                 hotspot: true,
               },
@@ -87,7 +82,7 @@ export const projectDetail = defineType({
           preview: {
             select: {
               title: "name",
-              media: "logo",
+              media: "logo.image.asset",
             },
           },
         },
@@ -141,4 +136,10 @@ export const projectDetail = defineType({
       ],
     }),
   ],
+  preview: {
+    select: {
+      title: "project_title",
+      media: "project_image.image.asset",
+    },
+  },
 });

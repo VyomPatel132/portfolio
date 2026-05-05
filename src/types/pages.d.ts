@@ -26,8 +26,12 @@ export type ProjectDetailPageData = {
   category: string;
   project_title: string;
   project_description: string;
-  image: string;
-  live_link: string;
+  project_image: {
+    _type: string;
+    alt: string;
+    image: string;
+    link?: string;
+  };
   source_code_url: string;
   about_project: string;
   tech_stack: TechStack[];

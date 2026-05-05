@@ -106,8 +106,12 @@ type FeaturedProject = {
   _type: string;
   project_title: string;
   project_description: string;
-  image: string;
-  live_link: string;
+  project_image: {
+    _type: string;
+    alt: string;
+    image: string;
+    link?: string;
+  };
   tech_stack: TechStack[];
   category?: string;
   slug?: string;

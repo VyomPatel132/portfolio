@@ -30,8 +30,8 @@ export const Intro = ({ introData }: { introData: ProjectDetailPageData }) => {
         </p>
 
         <div className="flex flex-wrap gap-6 mt-4">
-          {introData.live_link && (
-            <Link href={introData.live_link} className="w-full sm:w-auto">
+          {introData.project_image.link && (
+            <Link href={introData.project_image.link} className="w-full sm:w-auto">
               <MagicButton
                 title="View Live Demo"
                 icon={<FaExternalLinkAlt />}
@@ -52,7 +52,7 @@ export const Intro = ({ introData }: { introData: ProjectDetailPageData }) => {
         </div>
       </div>
 
-      <OverlayCard image={introData.image} />
+      <OverlayCard image={introData.project_image.image} />
     </div>
   );
 };

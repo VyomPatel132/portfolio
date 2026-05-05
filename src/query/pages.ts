@@ -43,13 +43,22 @@ _type,
 category,
 project_title,
 project_description,
-"image": project_image.asset->url,
-live_link,
+project_image{
+  _type,
+  alt,
+  "image": image.asset->url,
+  link,
+},
 source_code_url,
 about_project,
 tech_stack[] {
+  _type,
   name,
-  "logo": logo.asset->url
+  logo{
+    _type,
+    alt,
+    "logo": image.asset->url
+  },
 },
 project_status,
 role,

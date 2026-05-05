@@ -47,11 +47,11 @@ export const ProjectsListing = ({ data }: { data: ProjectListingSectionData }) =
                       alt="bg"
                       fill
                       className="object-cover opacity-40"
-                      width={1920} height={1080}
                     />
                     <Image
-                      src={project.image}
-                      alt={project.project_title}
+                      src={project.project_image.image}
+                      alt={project.project_image.alt || project.project_title}
+                      fill
                       className="object-contain object-bottom z-20 p-4 transition-transform duration-500 group-hover/card:scale-105"
                     />
                   </div>
@@ -60,7 +60,8 @@ export const ProjectsListing = ({ data }: { data: ProjectListingSectionData }) =
                 <CardItem
                   translateZ="40"
                   as="h2"
-                  className="text-xl md:text-2xl font-bold text-white mb-2 line-clamp-1"
+                  className="text-xl md:text-2xl font-bold text-white mb-2 line-clamp-1 cursor-pointer"
+                  onClick={() => router.push(`/projects/${project.slug}`)}
                 >
                   {project.project_title}
                 </CardItem>
@@ -82,8 +83,8 @@ export const ProjectsListing = ({ data }: { data: ProjectListingSectionData }) =
                         style={{ zIndex: project.tech_stack.length - idx }}
                       >
                         <Image
-                          src={tech.logo}
-                          alt={tech.name}
+                          src={tech.logo.logo}
+                          alt={tech.logo.alt || tech.name}
                           width={30}
                           height={30}
                           className="p-1.5"
@@ -93,7 +94,7 @@ export const ProjectsListing = ({ data }: { data: ProjectListingSectionData }) =
                   </CardItem>
 
                   <button
-                    onClick={() => router.push(`/projects/${project.slug}`)}
+                    onClick={() => router.push(`${project.project_image.link}`)}
                     className="flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors cursor-pointer"
                   >
                     <p className="text-sm md:text-base font-medium">
