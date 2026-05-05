@@ -45,8 +45,16 @@ type GridItem = {
   description?: string;
   variant?: GridItemVariant;
   tech_list?: string[];
-  img?: string;
-  spareImg?: string;
+  image?: {
+    _type: string;
+    alt: string;
+    "img": string;
+  };
+  spare_image?: {
+    _type: string;
+    alt: string;
+    "spareImg": string;
+  };
   className?: string;
   imgClassName?: string;
   titleClassName?: string;
@@ -70,7 +78,11 @@ type ExperienceItem = {
   _type: string;
   title: string;
   description: string;
-  icon: string;
+  icon: {
+    _type: string;
+    alt: string;
+    "icon": string;
+  };
   className?: string;
 };
 

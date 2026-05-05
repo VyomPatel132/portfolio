@@ -9,8 +9,14 @@ const footer_query = groq`*[_type == 'footer'][0]{
   title,
   copyright_text,
   social_links[]{
-    ...,
-    "imageUrl": icon.asset->url
+    _type,
+    platform,
+    icon{
+      _type,
+      alt,
+      link,
+      "imageUrl": image.asset->url,
+    }
   },
   footer_banner,
 }`;

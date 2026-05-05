@@ -42,13 +42,12 @@ export const gridItems = defineType({
     defineField({
       name: "image",
       title: "Card Image",
-      type: "image",
-      options: { hotspot: true },
+      type: "custom_image",
     }),
     defineField({
       name: "spare_image",
       title: "Spare Image",
-      type: "image",
+      type: "custom_image",
     }),
     defineField({
       name: "className",
@@ -70,8 +69,19 @@ export const gridItems = defineType({
   preview: {
     select: {
       title: "title",
-      subtitle: "variant",
-      media: "image",
+      subtitle: "description",
+      cardImage: "image.image.asset",
+      spareImage: "spare_image.image.asset",
+    },
+    prepare(selection) {
+      const { title, subtitle, cardImage, spareImage } = selection;
+
+      return {
+        title: title || "Untitled Grid Item",
+        subtitle: subtitle || "No Variant Selected",
+        // Use cardImage if it exists, otherwise use spareImage
+        media: cardImage || spareImage, 
+      };
     },
   },
 });

@@ -24,7 +24,7 @@ export const RecentProjects = ({ data }: { data: HomeFeaturedProjectSectionData 
             <PinContainer href={project.live_link} title={project.project_title}>
               <div className="relative flex items-center justify-center sm:w-142.5 w-[80vw] overflow-hidden sm:h-[40vh] h-[30vh] mb-10">
                 <div className="relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#13162d]">
-                  <Image src="/bg.png" alt="bg-img" width={500} height={500} />
+                  <Image src="/bg.png" alt="background" width={1920} height={1080} />
                 </div>
                 <Image
                   src={project.image}

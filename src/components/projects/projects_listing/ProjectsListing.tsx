@@ -47,11 +47,11 @@ export const ProjectsListing = ({ data }: { data: ProjectListingSectionData }) =
                       alt="bg"
                       fill
                       className="object-cover opacity-40"
+                      width={1920} height={1080}
                     />
                     <Image
                       src={project.image}
                       alt={project.project_title}
-                      fill
                       className="object-contain object-bottom z-20 p-4 transition-transform duration-500 group-hover/card:scale-105"
                     />
                   </div>
